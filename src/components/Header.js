@@ -1,4 +1,6 @@
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import Navigation from './Navigation';
 
 function Header() {
@@ -9,7 +11,9 @@ function Header() {
       </div>
       <Navigation />
       <div className="w-60 text-right">
-        <NavLink to="/Cart">Cart</NavLink>
+        <NavLink to="/Cart">
+          <FontAwesomeIcon icon={faShoppingCart} />
+        </NavLink>
       </div>
     </div>
   );
