@@ -6,25 +6,30 @@ import Cart from './pages/Cart';
 import Contacts from './pages/Contacts';
 
 function App() {
-  const router = createBrowserRouter([
+  const router = createBrowserRouter(
+    [
+      {
+        path: '/',
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: 'Shop',
+        element: <Shop />,
+      },
+      {
+        path: 'Cart',
+        element: <Cart />,
+      },
+      {
+        path: 'Contacts',
+        element: <Contacts />,
+      },
+    ],
     {
-      path: '/',
-      index: true,
-      element: <Home />,
-    },
-    {
-      path: 'Shop',
-      element: <Shop />,
-    },
-    {
-      path: 'Cart',
-      element: <Cart />,
-    },
-    {
-      path: 'Contacts',
-      element: <Contacts />,
-    },
-  ]);
+      basename: '/shopping-cart',
+    }
+  );
 
   return (
     <div>
