@@ -1,5 +1,6 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Header from './components/Header';
+import Layout from './components/Layout';
+// import Header from './components/Header/Header';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import Cart from './pages/Cart';
@@ -9,21 +10,25 @@ function App() {
   const router = createBrowserRouter(
     [
       {
-        path: '/',
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: 'Shop',
-        element: <Shop />,
-      },
-      {
-        path: 'Cart',
-        element: <Cart />,
-      },
-      {
-        path: 'Contacts',
-        element: <Contacts />,
+        element: <Layout />,
+        children: [
+          {
+            path: '/',
+            element: <Home />,
+          },
+          {
+            path: 'Shop',
+            element: <Shop />,
+          },
+          {
+            path: 'Cart',
+            element: <Cart />,
+          },
+          {
+            path: 'Contacts',
+            element: <Contacts />,
+          },
+        ],
       },
     ],
     {
@@ -33,9 +38,7 @@ function App() {
 
   return (
     <div>
-      <RouterProvider router={router}>
-        <Header />
-      </RouterProvider>
+      <RouterProvider router={router} />
     </div>
   );
 }
