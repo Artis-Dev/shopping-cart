@@ -1,6 +1,6 @@
 function Cart() {
   return (
-    <div>
+    <div className="grow">
       <h1>Cart</h1>
     </div>
   );

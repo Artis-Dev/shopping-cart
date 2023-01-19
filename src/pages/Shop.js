@@ -1,6 +1,6 @@
 function Shop() {
   return (
-    <div>
+    <div className="grow">
       <h1>Shop</h1>
     </div>
   );
