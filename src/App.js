@@ -17,15 +17,15 @@ function App() {
             element: <Home />,
           },
           {
-            path: 'Shop',
+            path: 'shop',
             element: <Shop />,
           },
           {
-            path: 'Cart',
+            path: 'cart',
             element: <Cart />,
           },
           {
-            path: 'Contacts',
+            path: 'contacts',
             element: <Contacts />,
           },
         ],
