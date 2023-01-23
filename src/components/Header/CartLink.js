@@ -4,7 +4,10 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 function CartLink() {
   return (
-    <NavLink to="/cart">
+    <NavLink
+      to="/cart"
+      className={({ isActive }) => (isActive ? 'text-gray-700' : undefined)}
+    >
       <FontAwesomeIcon icon={faShoppingCart} />
     </NavLink>
   );

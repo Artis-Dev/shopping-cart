@@ -10,9 +10,24 @@ function Navigation(props) {
 
   return (
     <nav className={`flex grow gap-6 ${showNav ? mobileCss : desktopCss}`}>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/shop">Shop</NavLink>
-      <NavLink to="/contacts">Contacts</NavLink>
+      <NavLink
+        to="/"
+        className={({ isActive }) => (isActive ? 'underline' : undefined)}
+      >
+        Home
+      </NavLink>
+      <NavLink
+        to="/shop"
+        className={({ isActive }) => (isActive ? 'underline' : undefined)}
+      >
+        Shop
+      </NavLink>
+      <NavLink
+        to="/contacts"
+        className={({ isActive }) => (isActive ? 'underline' : undefined)}
+      >
+        Contacts
+      </NavLink>
     </nav>
   );
 }
