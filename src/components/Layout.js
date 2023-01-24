@@ -25,8 +25,8 @@ function Layout() {
     <div className="flex h-screen flex-col">
       <Header handleShowNav={handleShowNav} showNav={showNav} />
       <div
-        className={`my-0 mx-auto w-full max-w-screen-xl grow pt-[72px] duration-300
-        ${showNav && 'bg-gray-500 opacity-25'}`}
+        className={`my-0 mx-auto w-full max-w-screen-xl grow bg-neutral-50 pt-[80px] duration-300
+        ${showNav && 'brightness-50'}`}
       >
         <Outlet />
       </div>

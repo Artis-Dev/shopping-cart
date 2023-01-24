@@ -5,8 +5,8 @@ function Footer(props) {
 
   return (
     <footer
-      className={`flex justify-center bg-gray-100 py-6 ${
-        showNav && 'bg-gray-600 opacity-25'
+      className={`flex justify-center bg-gray-100 py-6 duration-300 ${
+        showNav && 'brightness-50'
       }`}
     >
       <p>Built by</p>

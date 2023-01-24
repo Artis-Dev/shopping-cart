@@ -1,9 +1,10 @@
 import { bool, func } from 'prop-types';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import Navigation from './Navigation';
+import SideNav from './SideNav';
 import CartLink from './CartLink';
 import Logo from './Logo';
-import BurgerButton from './BurgerButton';
+import MenuButton from './MenuButton';
 
 function Header(props) {
   const { handleShowNav, showNav } = props;
@@ -13,8 +14,8 @@ function Header(props) {
   return (
     <div>
       <div
-        className={`fixed flex w-full bg-gray-100 py-6 px-12 ${
-          showNav && 'bg-gray-300 opacity-25'
+        className={`fixed z-40 flex w-full bg-gray-100 py-6 px-12 duration-300 ${
+          showNav && 'brightness-50'
         }`}
       >
         <div className="w-20 text-left">
