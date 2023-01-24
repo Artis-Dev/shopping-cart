@@ -9,7 +9,11 @@ function CartLink() {
         to="/cart"
         className={({ isActive }) => (isActive ? 'text-gray-700' : undefined)}
       >
-        <FontAwesomeIcon icon={faShoppingCart} className="self-center" />
+        <FontAwesomeIcon
+          icon={faShoppingCart}
+          size="lg"
+          className="self-center"
+        />
       </NavLink>
     </div>
   );

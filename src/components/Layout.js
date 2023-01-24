@@ -22,10 +22,10 @@ function Layout() {
   }, [isMobile]);
 
   return (
-    <div className="flex h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-neutral-50">
       <Header handleShowNav={handleShowNav} showNav={showNav} />
       <div
-        className={`my-0 mx-auto w-full max-w-screen-xl grow bg-neutral-50 pt-[80px] duration-300
+        className={`my-0 mx-auto w-full max-w-screen-xl grow bg-neutral-50 px-12 pb-12 pt-[calc(80px+48px)] duration-300
         ${showNav && 'brightness-50'}`}
       >
         <Outlet />
