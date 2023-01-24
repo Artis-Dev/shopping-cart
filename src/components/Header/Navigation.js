@@ -5,7 +5,7 @@ function Navigation(props) {
   const { showNav } = props;
 
   const mobileCss =
-    'fixed top-[72px] z-50 h-[calc(100vh-128px)] w-60 flex-col overflow-auto bg-gray-100 py-6 px-12';
+    'fixed left-0 top-0 z-50 h-full w-60 flex-col overflow-auto bg-gray-100 py-6 px-12';
   const desktopCss = 'justify-center';
 
   return (

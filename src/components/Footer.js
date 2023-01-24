@@ -1,6 +1,14 @@
-function Footer() {
+import { bool } from 'prop-types';
+
+function Footer(props) {
+  const { showNav } = props;
+
   return (
-    <footer className="flex justify-center bg-gray-100 py-4">
+    <footer
+      className={`flex justify-center bg-gray-100 py-6 ${
+        showNav && 'bg-gray-600 opacity-25'
+      }`}
+    >
       <p>Built by</p>
       <a
         className="ml-2 underline decoration-gray-700"
@@ -22,5 +30,9 @@ function Footer() {
     </footer>
   );
 }
+
+Footer.propTypes = {
+  showNav: bool.isRequired,
+};
 
 export default Footer;
