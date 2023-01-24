@@ -14,17 +14,17 @@ function Header(props) {
   return (
     <div>
       <div
-        className={`fixed z-40 flex w-full bg-gray-100 py-6 px-12 duration-300 ${
+        className={`fixed z-40 flex w-full items-center bg-gray-100 py-6 px-12 duration-300 ${
           showNav && 'brightness-50'
         }`}
       >
-        <div className="w-20 text-left">
+        <div className="w-20">
           {isMobile ? <MenuButton handleClick={handleShowNav} /> : <Logo />}
         </div>
         <div className="grow text-center">
           {isMobile ? <Logo /> : <Navigation />}
         </div>
-        <div className="w-20 text-right">
+        <div className="flex w-20 justify-end">
           <CartLink />
         </div>
       </div>
