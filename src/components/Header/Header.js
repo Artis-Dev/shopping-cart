@@ -19,7 +19,7 @@ function Header(props) {
         }`}
       >
         <div className="w-20 text-left">
-          {isMobile ? <BurgerButton handleClick={handleShowNav} /> : <Logo />}
+          {isMobile ? <MenuButton handleClick={handleShowNav} /> : <Logo />}
         </div>
         <div className="grow text-center">
           {isMobile ? <Logo /> : <Navigation />}
@@ -28,7 +28,7 @@ function Header(props) {
           <CartLink />
         </div>
       </div>
-      {showNav && <Navigation showNav={showNav} />}
+      {showNav && <SideNav handleShowNav={handleShowNav} showNav={showNav} />}
     </div>
   );
 }
