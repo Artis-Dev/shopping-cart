@@ -1,20 +1,14 @@
-import { Link } from 'react-router-dom';
+import CategoryBox from './CategoryBox';
 
 function FeaturedProductsSection() {
   return (
-    <div className="w-full bg-gray-100">
-      <div className="m-auto flex h-80 max-w-screen-xl p-12">
-        <div className="self-center">
-          <h2 className="text-4xl">Unleash Your Inner Fan</h2>
-          <h3 className="mb-6 text-2xl">
-            Explore Our Featured Products Collection
-          </h3>
-          <Link
-            to="/shop"
-            className="inline-block self-center rounded-md bg-gray-700 py-4 px-6 text-white"
-          >
-            All Products
-          </Link>
+    <div className="w-full">
+      <div className="m-auto  max-w-screen-xl  justify-between  p-12 ">
+        <h2 className="mb-6 text-4xl">Categories</h2>
+        <div className="flex flex-col gap-6 sm:flex-row">
+          <CategoryBox text="Lorem" link="/" />
+          <CategoryBox text="Ipsum" link="/" />
+          <CategoryBox text="Dolor" link="/" />
         </div>
       </div>
     </div>
