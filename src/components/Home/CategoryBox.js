@@ -7,7 +7,7 @@ function CategoryBox(props) {
   return (
     <Link
       to={link}
-      className="flex h-64 w-full grow rounded-lg bg-gray-200 p-6 sm:w-1/3"
+      className="flex h-64 w-full grow rounded-lg bg-gray-200 p-6"
     >
       <div className="text-3xl">{text}</div>
     </Link>
