@@ -1,5 +1,11 @@
+import FeaturedProductsSection from '../components/Home/FeaturedProductsSection';
+
 function Home() {
-  return <h1>Home</h1>;
+  return (
+    <div>
+      <FeaturedProductsSection />
+    </div>
+  );
 }
 
 export default Home;
