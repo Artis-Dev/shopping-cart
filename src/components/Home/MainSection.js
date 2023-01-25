@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
-function FeaturedProductsSection() {
+function MainSection() {
   return (
-    <div className="w-full bg-gray-100">
+    <div className="mb-12 w-full bg-gray-100">
       <div className="m-auto flex h-80 max-w-screen-xl p-12">
         <div className="self-center">
           <h2 className="text-4xl">Unleash Your Inner Fan</h2>
@@ -21,4 +21,4 @@ function FeaturedProductsSection() {
   );
 }
 
-export default FeaturedProductsSection;
+export default MainSection;
