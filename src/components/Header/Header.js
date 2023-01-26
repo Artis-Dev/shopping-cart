@@ -18,7 +18,7 @@ function Header(props) {
           showNav && 'brightness-50'
         }`}
       >
-        <div className="m-auto flex max-w-screen-xl py-6 px-12">
+        <div className="m-auto flex max-w-screen-xl items-center py-6 px-12">
           <div className="w-20">
             {isMobile ? <MenuButton handleClick={handleShowNav} /> : <Logo />}
           </div>
