@@ -6,7 +6,7 @@ function MenuButton(props) {
   const { handleClick, showNav } = props;
 
   return (
-    <button type="button" onClick={handleClick} className="h-8 w-8">
+    <button type="button" onClick={handleClick} className="sidenav h-8 w-8">
       {showNav ? (
         <FontAwesomeIcon icon={faClose} size="xl" className="self-center" />
       ) : (

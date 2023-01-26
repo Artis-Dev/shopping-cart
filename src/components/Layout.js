@@ -21,7 +21,18 @@ function Layout() {
     }
   }, [isMobile]);
 
-  // max-w-screen-xl px-12 pb-12 pt-[calc(80px+48px)]
+  useEffect(() => {
+    function handleClick(event) {
+      if (showNav && !event.target.closest('.sidenav')) {
+        setShowNav(false);
+      }
+    }
+
+    document.addEventListener('click', handleClick);
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  }, [showNav]);
 
   return (
     <div className="flex min-h-screen flex-col bg-neutral-50">
