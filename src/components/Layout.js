@@ -7,7 +7,7 @@ import Header from './Header/Header';
 function Layout() {
   const [showNav, setShowNav] = useState(false);
 
-  const isMobile = useMediaQuery('(max-width: 640px)');
+  const isMobile = useMediaQuery('(max-width: 639px)');
 
   const handleShowNav = () => {
     if (isMobile) {

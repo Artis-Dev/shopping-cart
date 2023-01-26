@@ -9,7 +9,7 @@ import MenuButton from './MenuButton';
 function Header(props) {
   const { handleShowNav, showNav } = props;
 
-  const isMobile = useMediaQuery('(max-width: 640px)');
+  const isMobile = useMediaQuery('(max-width: 639px)');
 
   return (
     <div>
