@@ -3,12 +3,14 @@ import { number, shape, string } from 'prop-types';
 function Product(props) {
   const { product } = props;
 
+  const prettyPrice = `${(Math.round(product.price * 100) / 100).toFixed(2)} €`;
+
   return (
     <div className="h-auto min-w-[278px] max-w-full rounded-lg border border-gray-200">
       <img src={product.image} alt="" className="m-auto" />
       <div className="bg-gray-200 p-3">
         <h3 className="text-xl">{product.name}</h3>
-        <h4>{product.price}</h4>
+        <h4>{prettyPrice}</h4>
         <button type="button" className="rounded-lg bg-white py-2 px-4">
           Add to cart
         </button>
