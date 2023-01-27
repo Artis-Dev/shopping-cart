@@ -23,7 +23,7 @@ function FeaturedProductsSection() {
         <h2 className="mb-6 text-4xl">Featured Products</h2>
         <div className="grid min-w-[278px] grid-cols-[repeat(auto-fit,minmax(278px,1fr))] gap-6">
           {randomFourItems.map((product) => (
-            <Product product={product} />
+            <Product key={product.id} product={product} />
           ))}
         </div>
       </div>
