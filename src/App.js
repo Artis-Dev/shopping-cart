@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Shop from './pages/Shop';
 import Cart from './pages/Cart';
 import Contacts from './pages/Contacts';
+import PageNotFound from './pages/PageNotFound';
 
 function App() {
   const router = createBrowserRouter(
@@ -27,6 +28,10 @@ function App() {
             path: 'contacts',
             element: <Contacts />,
           },
+          {
+            path: '*',
+            element: <PageNotFound />,
+          },
         ],
       },
     ],
@@ -35,11 +40,7 @@ function App() {
     }
   );
 
-  return (
-    <div>
-      <RouterProvider router={router} />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
