@@ -1,16 +1,30 @@
-import CategoryBox from './CategoryBox';
+import products from '../../utils/products';
+import Product from '../Shop/Product';
 
 function FeaturedProductsSection() {
+  function shuffleArray(array) {
+    const shuffledArray = array;
+    for (let i = array.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [
+        shuffledArray[j],
+        shuffledArray[i],
+      ];
+    }
+    return shuffledArray;
+  }
+
+  const shuffledItems = shuffleArray(products);
+  const randomFourItems = shuffledItems.slice(0, 4);
+
   return (
     <div className="mb-12 w-full">
-      <div className="m-auto max-w-screen-xl justify-between  px-12 ">
+      <div className="m-auto max-w-screen-xl justify-between px-12 ">
         <h2 className="mb-6 text-4xl">Featured Products</h2>
-        <div className="flex flex-col gap-6 sm:flex-row">
-          {/* Dummy boxes for a while */}
-          <CategoryBox text="Lorem" link="/" />
-          <CategoryBox text="Ipsum" link="/" />
-          <CategoryBox text="Dolor" link="/" />
-          <CategoryBox text="Sit" link="/" />
+        <div className="grid min-w-[278px] grid-cols-[repeat(auto-fit,minmax(278px,1fr))] gap-6">
+          {randomFourItems.map((product) => (
+            <Product product={product} />
+          ))}
         </div>
       </div>
     </div>
