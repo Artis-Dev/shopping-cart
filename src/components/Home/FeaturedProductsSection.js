@@ -1,7 +1,9 @@
-import products from '../../utils/products';
+import { useSelector } from 'react-redux';
 import Product from '../Shop/Product';
 
 function FeaturedProductsSection() {
+  const { products } = useSelector((state) => state);
+
   function shuffleArray(array) {
     const shuffledArray = array;
     for (let i = array.length - 1; i > 0; i -= 1) {
