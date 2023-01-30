@@ -1,9 +1,7 @@
 import { string } from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function CategoryBox(props) {
-  const { text, link } = props;
-
+function CategoryBox({ text, link }) {
   return (
     <Link
       to={link}

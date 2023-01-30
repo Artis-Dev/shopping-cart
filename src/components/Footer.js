@@ -1,8 +1,6 @@
 import { bool } from 'prop-types';
 
-function Footer(props) {
-  const { showNav } = props;
-
+function Footer({ showNav }) {
   return (
     <footer
       className={`flex justify-center bg-gray-100 py-6 duration-300 ${

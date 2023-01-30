@@ -1,7 +1,6 @@
 import { number, shape, string } from 'prop-types';
 
-function Product(props) {
-  const { product } = props;
+function Product({ product }) {
 
   const prettyPrice = `${(Math.round(product.price * 100) / 100).toFixed(2)} €`;
 
