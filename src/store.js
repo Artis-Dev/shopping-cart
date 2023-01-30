@@ -2,23 +2,33 @@ import { configureStore } from '@reduxjs/toolkit';
 import products from './utils/products';
 
 const initialState = {
-  count: 0,
   products,
   cart: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
+  let itemIndex;
   switch (action.type) {
-    case 'INCREMENT':
+    case 'ADD_TO_CART':
+      itemIndex = state.cart.findIndex(
+        (cartItem) => cartItem.id === action.item.id
+      );
+      if (itemIndex !== -1) {
+        return {
+          ...state,
+          cart: state.cart.map((item) => {
+            if (item.id === action.item.id) {
+              return { ...item, quantity: item.quantity + 1 };
+            }
+            return item;
+          }),
+        };
+      }
       return {
         ...state,
-        count: state.count + 1,
+        cart: [...state.cart, { ...action.item, quantity: 1 }],
       };
-    case 'DECREMENT':
-      return {
-        ...state,
-        count: state.count - 1,
-      };
+
     default:
       return state;
   }
