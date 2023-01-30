@@ -5,7 +5,7 @@ function FeaturedProductsSection() {
   const { products } = useSelector((state) => state);
 
   function shuffleArray(array) {
-    const shuffledArray = array;
+    const shuffledArray = [...array];
     for (let i = array.length - 1; i > 0; i -= 1) {
       const j = Math.floor(Math.random() * (i + 1));
       [shuffledArray[i], shuffledArray[j]] = [
