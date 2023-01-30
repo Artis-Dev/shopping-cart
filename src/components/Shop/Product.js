@@ -1,6 +1,12 @@
 import { number, shape, string } from 'prop-types';
+import { useDispatch } from 'react-redux';
 
 function Product({ product }) {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (item) => {
+    dispatch({ type: 'ADD_TO_CART', item });
+  };
 
   const prettyPrice = `${(Math.round(product.price * 100) / 100).toFixed(2)} €`;
 
@@ -10,7 +16,11 @@ function Product({ product }) {
       <div className="rounded-b-lg bg-gray-200 p-3">
         <h3 className="mb-1 text-xl">{product.name}</h3>
         <h4 className="mb-2 text-lg">{prettyPrice}</h4>
-        <button type="button" className="w-full rounded-lg bg-white py-2 px-4">
+        <button
+          type="button"
+          className="w-full rounded-lg bg-white py-2 px-4"
+          onClick={() => handleAddToCart(product)}
+        >
           Add to cart
         </button>
       </div>
