@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 function Navigation() {
   return (
-    <nav className="flex grow justify-center gap-6">
+    <nav className="flex flex-col gap-6 sm:grow sm:flex-row sm:justify-center">
       <NavLink
         to="/"
         className={({ isActive }) => (isActive ? 'underline' : undefined)}

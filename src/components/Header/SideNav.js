@@ -1,6 +1,6 @@
 import { bool, func } from 'prop-types';
-import { NavLink } from 'react-router-dom';
 import MenuButton from './MenuButton';
+import Navigation from './Navigation';
 
 function SideNav(props) {
   const { handleShowNav, showNav } = props;
@@ -10,26 +10,7 @@ function SideNav(props) {
       <div className="mb-12">
         <MenuButton handleClick={handleShowNav} showNav={showNav} />
       </div>
-      <nav className="flex flex-col gap-6">
-        <NavLink
-          to="/"
-          className={({ isActive }) => (isActive ? 'underline' : undefined)}
-        >
-          Home
-        </NavLink>
-        <NavLink
-          to="/shop"
-          className={({ isActive }) => (isActive ? 'underline' : undefined)}
-        >
-          Shop
-        </NavLink>
-        <NavLink
-          to="/contacts"
-          className={({ isActive }) => (isActive ? 'underline' : undefined)}
-        >
-          Contacts
-        </NavLink>
-      </nav>
+      <Navigation />
     </div>
   );
 }
