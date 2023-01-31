@@ -29,6 +29,28 @@ const reducer = (state = initialState, action = {}) => {
         cart: [...state.cart, { ...action.item, quantity: 1 }],
       };
 
+    case 'INCREMENT_CART_ITEM':
+      return {
+        ...state,
+        cart: state.cart.map((item) => {
+          if (item.id === action.item.id) {
+            return { ...item, quantity: item.quantity + 1 };
+          }
+          return item;
+        }),
+      };
+
+    case 'DECREMENT_CART_ITEM':
+      return {
+        ...state,
+        cart: state.cart.map((item) => {
+          if (item.id === action.item.id && item.quantity > 1) {
+            return { ...item, quantity: item.quantity - 1 };
+          }
+          return item;
+        }),
+      };
+
     default:
       return state;
   }
