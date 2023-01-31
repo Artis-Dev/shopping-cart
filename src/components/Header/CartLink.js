@@ -14,7 +14,9 @@ function CartLink() {
     <div className="flex h-8 w-8 items-center justify-center">
       <NavLink
         to="/cart"
-        className={({ isActive }) => (isActive ? 'text-gray-700' : undefined)}
+        className={({ isActive }) =>
+          isActive ? 'text-gray-700' : 'text-gray-900'
+        }
       >
         <span
           className={`${
@@ -23,7 +25,7 @@ function CartLink() {
         >
           <FontAwesomeIcon icon={faShoppingCart} />
           {totalProducts > 0 && (
-            <span className="fa-layers-counter translate-x-1/4 -translate-y-1/4 scale-50 border-4 border-gray-100">
+            <span className="fa-layers-counter translate-x-1/4 -translate-y-1/4 scale-50 border-4 border-gray-100 bg-gray-700">
               {totalProducts}
             </span>
           )}
