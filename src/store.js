@@ -44,12 +44,17 @@ const reducer = (state = initialState, action = {}) => {
     case 'DECREMENT_CART_ITEM':
       return {
         ...state,
-        cart: state.cart.map((item) => {
-          if (item.id === action.item.id && item.quantity > 1) {
-            return { ...item, quantity: item.quantity - 1 };
-          }
-          return item;
-        }),
+        cart: state.cart
+          .map((item) => {
+            if (item.id === action.item.id) {
+              if (item.quantity > 1) {
+                return { ...item, quantity: item.quantity - 1 };
+              }
+              return false;
+            }
+            return item;
+          })
+          .filter((item) => item),
       };
 
     case 'REMOVE_CART_ITEM':
