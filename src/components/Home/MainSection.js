@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import NavButton from '../Shared/NavButton';
 
 function MainSection() {
   return (
@@ -9,12 +9,7 @@ function MainSection() {
           <h3 className="mb-6 text-3xl font-normal">
             Explore Our Featured Products Collection
           </h3>
-          <Link
-            to="/shop"
-            className="inline-block self-center rounded-lg bg-gray-700 py-4 px-8 text-white"
-          >
-            All Products
-          </Link>
+          <NavButton link="/shop" text="All Products" />
         </div>
       </div>
     </div>
