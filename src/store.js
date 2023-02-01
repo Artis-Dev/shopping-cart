@@ -51,6 +51,14 @@ const reducer = (state = initialState, action = {}) => {
         }),
       };
 
+    case 'REMOVE_CART_ITEM':
+      return {
+        ...state,
+        cart: state.cart.filter((item) => {
+          return item.id !== action.item.id;
+        }),
+      };
+
     default:
       return state;
   }

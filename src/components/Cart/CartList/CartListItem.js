@@ -15,6 +15,10 @@ function CartListItem({ product }) {
     dispatch({ type: 'DECREMENT_CART_ITEM', item });
   };
 
+  const handleRemove = (item) => {
+    dispatch({ type: 'REMOVE_CART_ITEM', item });
+  };
+
   return (
     <div
       className="mb-3 flex h-32 basis-0 items-center justify-between gap-4"
@@ -56,6 +60,7 @@ function CartListItem({ product }) {
         <button
           type="button"
           className="rounded-lg bg-gray-200 py-1 px-2 align-middle text-xs"
+          onClick={() => handleRemove(product)}
         >
           <FontAwesomeIcon icon={faRemove} /> REMOVE
         </button>
