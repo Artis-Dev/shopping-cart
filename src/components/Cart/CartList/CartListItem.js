@@ -17,31 +17,31 @@ function CartListItem({ product }) {
 
   return (
     <div
-      className="mb-3 flex h-32 basis-0 items-center justify-between gap-6"
+      className="mb-3 flex h-32 basis-0 items-center justify-between gap-4"
       key={product.id}
     >
       <div className="w-32 shrink-0">
         <img className="max-h-32" src={product.image} alt="" />
       </div>
-      <div className="grow basis-1/2">{product.name}</div>
-      <div className="grow basis-1/4 text-right">
+      <div className="grow basis-1/3">{product.name}</div>
+      <div className="grow basis-1/6 text-right">
         {prettyPrice(product.price)}
       </div>
-      <div className="grow basis-1/4 text-center">
+      <div className="grow basis-1/5 text-center">
         <div className="mb-2">
           <button
             type="button"
             className="rounded-l bg-gray-200 py-1 px-2 font-bold text-gray-800"
             onClick={() => handleDecrement(product)}
           >
-            <FontAwesomeIcon icon={faMinus} />
+            <FontAwesomeIcon icon={faMinus} size="xs" />
           </button>
           <input
             type="number"
             name=""
             id=""
             value={product.quantity}
-            className="w-12 appearance-none rounded-none bg-gray-50 py-1 px-2 text-center"
+            className="w-10 appearance-none rounded-none bg-gray-50 py-1 px-1 text-center"
             readOnly
             style={{ WebkitAppearance: 'textfield' }}
           />
@@ -50,7 +50,7 @@ function CartListItem({ product }) {
             className="rounded-r bg-gray-200 py-1 px-2 font-bold text-gray-800"
             onClick={() => handleIncrement(product)}
           >
-            <FontAwesomeIcon icon={faPlus} />
+            <FontAwesomeIcon icon={faPlus} size="xs" />
           </button>
         </div>
         <button
@@ -60,7 +60,7 @@ function CartListItem({ product }) {
           <FontAwesomeIcon icon={faRemove} /> REMOVE
         </button>
       </div>
-      <div className="grow basis-1/4 text-right">
+      <div className="grow basis-1/6 text-right">
         {prettyPrice(product.price * product.quantity)}
       </div>
     </div>
