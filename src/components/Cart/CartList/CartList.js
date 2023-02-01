@@ -1,8 +1,10 @@
-import { arrayOf, shape } from 'prop-types';
+import { useSelector } from 'react-redux';
 import CartListHeader from './CartListHeader';
 import CartListItem from './CartListItem';
 
-function CartList({ cart }) {
+function CartList() {
+  const { cart } = useSelector((state) => state);
+
   return (
     <>
       <CartListHeader />
@@ -12,9 +14,5 @@ function CartList({ cart }) {
     </>
   );
 }
-
-CartList.propTypes = {
-  cart: arrayOf(shape({})).isRequired,
-};
 
 export default CartList;

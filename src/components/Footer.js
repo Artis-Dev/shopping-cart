@@ -1,6 +1,8 @@
-import { bool } from 'prop-types';
+import { useSelector } from 'react-redux';
 
-function Footer({ showNav }) {
+function Footer() {
+  const { showNav } = useSelector((state) => state);
+
   return (
     <footer
       className={`flex justify-center bg-gray-100 py-6 duration-300 ${
@@ -28,9 +30,5 @@ function Footer({ showNav }) {
     </footer>
   );
 }
-
-Footer.propTypes = {
-  showNav: bool.isRequired,
-};
 
 export default Footer;

@@ -1,4 +1,5 @@
-import { bool, func } from 'prop-types';
+import { useCallback, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import Navigation from './Navigation';
 import SideNav from './SideNav';
@@ -6,10 +7,44 @@ import CartLink from './CartLink';
 import Logo from './Logo';
 import MenuButton from './MenuButton';
 
-function Header(props) {
-  const { handleShowNav, showNav } = props;
-
+function Header() {
+  const dispatch = useDispatch();
+  const { showNav } = useSelector((state) => state);
   const isMobile = useMediaQuery('(max-width: 639px)');
+
+  const toggleNav = useCallback(() => {
+    dispatch({ type: 'TOGGLE_NAV' });
+  }, [dispatch]);
+
+  const disableNav = useCallback(() => {
+    dispatch({ type: 'DISABLE_NAV' });
+  }, [dispatch]);
+
+  const handleShowNav = useCallback(() => {
+    if (isMobile) {
+      toggleNav();
+    }
+  }, [isMobile, toggleNav]);
+
+  useEffect(() => {
+    if (!isMobile) {
+      disableNav();
+    }
+  }, [isMobile, disableNav]);
+
+  useEffect(() => {
+    const handleClick = (event) => {
+      if (showNav && !event.target.closest('.sidenav')) {
+        disableNav();
+      }
+    };
+
+    document.addEventListener('click', handleClick);
+
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  }, [showNav, disableNav]);
 
   return (
     <div>
@@ -30,14 +65,9 @@ function Header(props) {
           </div>
         </div>
       </div>
-      {showNav && <SideNav handleShowNav={handleShowNav} showNav={showNav} />}
+      {showNav && <SideNav handleShowNav={handleShowNav} />}
     </div>
   );
 }
-
-Header.propTypes = {
-  handleShowNav: func.isRequired,
-  showNav: bool.isRequired,
-};
 
 export default Header;

@@ -1,9 +1,10 @@
-import { bool, func } from 'prop-types';
+import { func } from 'prop-types';
+import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faClose } from '@fortawesome/free-solid-svg-icons';
 
-function MenuButton(props) {
-  const { handleClick, showNav } = props;
+function MenuButton({ handleClick }) {
+  const { showNav } = useSelector((state) => state);
 
   return (
     <button type="button" onClick={handleClick} className="sidenav h-8 w-8">
@@ -18,11 +19,6 @@ function MenuButton(props) {
 
 MenuButton.propTypes = {
   handleClick: func.isRequired,
-  showNav: bool,
-};
-
-MenuButton.defaultProps = {
-  showNav: false,
 };
 
 export default MenuButton;

@@ -4,6 +4,7 @@ import products from './utils/products';
 const initialState = {
   products,
   cart: [],
+  showNav: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -57,6 +58,18 @@ const reducer = (state = initialState, action = {}) => {
         cart: state.cart.filter((item) => {
           return item.id !== action.item.id;
         }),
+      };
+
+    case 'TOGGLE_NAV':
+      return {
+        ...state,
+        showNav: !state.showNav,
+      };
+
+    case 'DISABLE_NAV':
+      return {
+        ...state,
+        showNav: false,
       };
 
     default:
