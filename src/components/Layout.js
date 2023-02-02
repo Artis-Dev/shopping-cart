@@ -7,10 +7,10 @@ function Layout() {
   const { showNav } = useSelector((state) => state);
 
   return (
-    <div className="flex min-h-screen flex-col bg-neutral-50">
+    <div className="flex min-h-screen flex-col bg-white">
       <Header />
       <div
-        className={`my-0 mx-auto w-full grow bg-neutral-50 pt-[80px] duration-300
+        className={`my-0 mx-auto w-full grow bg-white pt-[80px] duration-300
         ${showNav && 'brightness-50'}`}
       >
         <Outlet />
