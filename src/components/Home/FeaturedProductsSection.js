@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import Product from '../Shop/Product';
 
@@ -16,8 +17,10 @@ function FeaturedProductsSection() {
     return shuffledArray;
   }
 
-  const shuffledItems = shuffleArray(products);
-  const randomFourItems = shuffledItems.slice(0, 4);
+  const randomFourItems = useMemo(() => {
+    const shuffledItems = shuffleArray(products);
+    return shuffledItems.slice(0, 4);
+  }, [products]);
 
   return (
     <div className="mb-12 w-full">
