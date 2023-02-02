@@ -34,7 +34,10 @@ function Header() {
 
   useEffect(() => {
     const handleClick = (event) => {
-      if (showNav && !event.target.closest('.sidenav')) {
+      if (
+        showNav &&
+        (!event.target.closest('.sidenav') || event.target.closest('.link'))
+      ) {
         disableNav();
       }
     };
