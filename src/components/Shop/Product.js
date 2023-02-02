@@ -1,13 +1,13 @@
 import { number, shape, string } from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import prettyPrice from '../../utils/prettyPrice';
+import AddToCartButton from './AddToCartButton';
+import ProductCartQuantity from './ProductCartQuantity';
 
 function Product({ product }) {
-  const dispatch = useDispatch();
+  const { cart } = useSelector((state) => state);
 
-  const handleAddToCart = (item) => {
-    dispatch({ type: 'ADD_TO_CART', item });
-  };
+  const isInCart = cart.find((item) => item.id === product.id);
 
   return (
     <div className="h-auto min-w-[278px] max-w-full rounded-lg border border-gray-200">
@@ -15,13 +15,11 @@ function Product({ product }) {
       <div className="rounded-b-lg bg-gray-200 p-3">
         <h3 className="mb-1 text-xl">{product.name}</h3>
         <h4 className="mb-2 text-lg">{prettyPrice(product.price)}</h4>
-        <button
-          type="button"
-          className="w-full rounded-lg bg-white py-2 px-4"
-          onClick={() => handleAddToCart(product)}
-        >
-          Add to cart
-        </button>
+        {isInCart ? (
+          <ProductCartQuantity product={product} />
+        ) : (
+          <AddToCartButton product={product} />
+        )}
       </div>
     </div>
   );
@@ -33,6 +31,7 @@ Product.propTypes = {
     image: string.isRequired,
     name: string.isRequired,
     price: number.isRequired,
+    quantity: number,
   }).isRequired,
 };
 
