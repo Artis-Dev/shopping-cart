@@ -5,6 +5,10 @@ const initialState = {
   products,
   cart: [],
   showNav: false,
+  filter: {
+    includeCategories: [],
+    includeExclusive: false,
+  },
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -75,6 +79,35 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         showNav: false,
+      };
+
+    case 'FILTER_ADD':
+      return {
+        ...state,
+        filter: {
+          ...state.filter,
+          includeCategories: [...state.filter.includeCategories, action.item],
+        },
+      };
+
+    case 'FILTER_REMOVE':
+      return {
+        ...state,
+        filter: {
+          ...state.filter,
+          includeCategories: state.filter.includeCategories.filter(
+            (category) => category !== action.item
+          ),
+        },
+      };
+
+    case 'FILTER_TOGGLE_EXLUSIVE':
+      return {
+        ...state,
+        filter: {
+          ...state.filter,
+          includeExclusive: action.item,
+        },
       };
 
     default:
