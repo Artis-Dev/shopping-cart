@@ -110,6 +110,15 @@ const reducer = (state = initialState, action = {}) => {
         },
       };
 
+    case 'FILTER_RESET':
+      return {
+        ...state,
+        filter: {
+          includeCategories: [],
+          includeExclusive: false,
+        },
+      };
+
     default:
       return state;
   }
