@@ -13,6 +13,7 @@ function Sidebar() {
     () => new URLSearchParams(location.search),
     [location.search]
   );
+  const filterLength = Array.from(queryParams).length;
 
   useEffect(() => {
     queryParams.forEach((value, key) => {
@@ -56,7 +57,14 @@ function Sidebar() {
 
   return (
     <div className="w-full text-lg sm:max-w-[278px] ">
-      <h2 className="mb-4 text-3xl font-bold">Filters</h2>
+      <h2 className="mb-4 text-3xl font-bold">
+        Filters
+        {filterLength ? (
+          <span className="ml-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-200 align-top text-base">
+            {filterLength}
+          </span>
+        ) : null}
+      </h2>
       <div className="mb-4 flex gap-y-4 gap-x-6 sm:flex-col">
         <div>
           <h3 className="mb-2 text-2xl">Exclusivity</h3>
