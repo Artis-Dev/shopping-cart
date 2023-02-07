@@ -1,29 +1,63 @@
+import { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Checkbox from '../Shared/Checkbox';
 
 function Sidebar() {
   const dispatch = useDispatch();
   const { filter } = useSelector((state) => state);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+  const queryParams = useMemo(
+    () => new URLSearchParams(location.search),
+    [location.search]
+  );
+
+  useEffect(() => {
+    queryParams.forEach((value, key) => {
+      if (key === 'exclusive') {
+        dispatch({
+          type: 'FILTER_TOGGLE_EXLUSIVE',
+          item: value === 'true',
+        });
+      } else
+        dispatch({
+          type: value === 'true' ? 'FILTER_ADD' : 'FILTER_REMOVE',
+          item: key,
+        });
+    });
+
+    return () => {
+      dispatch({
+        type: 'FILTER_RESET',
+      });
+    };
+  }, [dispatch, queryParams]);
+
   const handleCheckboxChange = (event) => {
     const { value, checked } = event.target;
 
-    if (value === 'exclusive') {
-      dispatch({
-        type: 'FILTER_TOGGLE_EXLUSIVE',
-        item: checked,
-      });
-    } else if (checked) {
-      dispatch({ type: 'FILTER_ADD', item: value });
+    if (checked) {
+      queryParams.set(value, 'true');
     } else {
-      dispatch({ type: 'FILTER_REMOVE', item: value });
+      queryParams.delete(value);
     }
+
+    navigate(`${location.pathname}?${queryParams.toString()}`);
+  };
+
+  const handleReset = () => {
+    dispatch({
+      type: 'FILTER_RESET',
+    });
+    navigate(location.pathname);
   };
 
   return (
     <div className="w-full text-lg sm:max-w-[278px] ">
       <h2 className="mb-4 text-3xl font-bold">Filters</h2>
-      <div className="flex gap-y-4 gap-x-6 sm:flex-col">
+      <div className="mb-4 flex gap-y-4 gap-x-6 sm:flex-col">
         <div>
           <h3 className="mb-2 text-2xl">Exclusivity</h3>
           <Checkbox
@@ -61,6 +95,13 @@ function Sidebar() {
           </div>
         </div>
       </div>
+      <button
+        className="rounded-lg bg-gray-200 py-2 px-4"
+        type="button"
+        onClick={handleReset}
+      >
+        Reset filters
+      </button>
     </div>
   );
 }
