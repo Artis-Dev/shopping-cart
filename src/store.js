@@ -111,10 +111,20 @@ const reducer = (state = initialState, action = {}) => {
         },
       };
 
+    case 'FILTER_REMOVE_EXLUSIVE':
+      return {
+        ...state,
+        filter: {
+          ...state.filter,
+          includeExclusive: false,
+        },
+      };
+
     case 'FILTER_RESET':
       return {
         ...state,
         filter: {
+          ...state.filter,
           includeCategories: [],
           includeExclusive: false,
         },

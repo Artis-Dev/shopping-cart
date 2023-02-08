@@ -81,14 +81,14 @@ function Sidebar() {
           <div className="flex flex-wrap gap-x-4 gap-y-0 sm:flex-col">
             {filter.categories.map((category) => {
               return (
-            <Checkbox
+                <Checkbox
                   key={category}
                   name={category}
                   id={category}
                   text={category.charAt(0).toUpperCase() + category.slice(1)}
                   checked={filter.includeCategories.includes(category)}
-              handleChange={handleCheckboxChange}
-            />
+                  handleChange={handleCheckboxChange}
+                />
               );
             })}
           </div>

@@ -22,12 +22,10 @@ function ProductList() {
   }, [filter, products]);
 
   return (
-    <div className="grow">
-      <div className="grid min-w-[278px] grid-cols-[repeat(auto-fit,minmax(278px,1fr))] gap-6">
-        {filteredProducts.map((product) => {
-          return <Product key={product.id} product={product} />;
-        })}
-      </div>
+    <div className="grid min-w-[278px] grid-cols-[repeat(auto-fit,minmax(278px,1fr))] gap-6">
+      {filteredProducts.map((product) => {
+        return <Product key={product.id} product={product} />;
+      })}
     </div>
   );
 }
