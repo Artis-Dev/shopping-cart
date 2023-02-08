@@ -6,6 +6,7 @@ const initialState = {
   cart: [],
   showNav: false,
   filter: {
+    categories: ['ipsum', 'dolor', 'amet'],
     includeCategories: [],
     includeExclusive: false,
   },

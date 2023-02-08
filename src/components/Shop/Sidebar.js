@@ -57,10 +57,10 @@ function Sidebar() {
 
   return (
     <div className="w-full text-lg sm:max-w-[278px] ">
-      <h2 className="mb-4 text-3xl font-bold">
+      <h2 className="mb-4 text-4xl font-bold">
         Filters
         {filterLength ? (
-          <span className="ml-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-200 align-top text-base">
+          <span className="ml-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-200 align-middle text-base">
             {filterLength}
           </span>
         ) : null}
@@ -79,27 +79,18 @@ function Sidebar() {
         <div>
           <h3 className="mb-2 text-2xl">Categories</h3>
           <div className="flex flex-wrap gap-x-4 gap-y-0 sm:flex-col">
+            {filter.categories.map((category) => {
+              return (
             <Checkbox
-              name="ipsum"
-              id="ipsum"
-              text="Ipsum"
-              checked={filter.includeCategories.includes('ipsum')}
+                  key={category}
+                  name={category}
+                  id={category}
+                  text={category.charAt(0).toUpperCase() + category.slice(1)}
+                  checked={filter.includeCategories.includes(category)}
               handleChange={handleCheckboxChange}
             />
-            <Checkbox
-              name="dolor"
-              id="dolor"
-              text="Dolor"
-              checked={filter.includeCategories.includes('dolor')}
-              handleChange={handleCheckboxChange}
-            />
-            <Checkbox
-              name="amet"
-              id="amet"
-              text="Amet"
-              checked={filter.includeCategories.includes('amet')}
-              handleChange={handleCheckboxChange}
-            />
+              );
+            })}
           </div>
         </div>
       </div>
