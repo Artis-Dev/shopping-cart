@@ -1,10 +1,10 @@
 import { string } from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function CategoryBox({ text, link }) {
+function CategoryBox({ text, category }) {
   return (
     <Link
-      to={link}
+      to={`/shop/${category}`}
       className="flex h-64 w-full grow rounded-lg bg-gray-200 p-6"
     >
       <div className="text-3xl">{text}</div>
@@ -14,7 +14,7 @@ function CategoryBox({ text, link }) {
 
 CategoryBox.propTypes = {
   text: string.isRequired,
-  link: string.isRequired,
+  category: string.isRequired,
 };
 
 export default CategoryBox;

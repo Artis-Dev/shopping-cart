@@ -7,8 +7,8 @@ const initialState = {
   showNav: false,
   filter: {
     categories: ['ipsum', 'dolor', 'amet'],
-    includeCategories: [],
-    includeExclusive: false,
+    activeFilters: [],
+    filteredProducts: [],
   },
 };
 
@@ -83,11 +83,16 @@ const reducer = (state = initialState, action = {}) => {
       };
 
     case 'FILTER_ADD':
+      if (state.filter.activeFilters.includes(action.item)) {
+        return {
+          ...state,
+        };
+      }
       return {
         ...state,
         filter: {
           ...state.filter,
-          includeCategories: [...state.filter.includeCategories, action.item],
+          activeFilters: [...state.filter.activeFilters, action.item],
         },
       };
 
@@ -96,27 +101,9 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         filter: {
           ...state.filter,
-          includeCategories: state.filter.includeCategories.filter(
+          activeFilters: state.filter.activeFilters.filter(
             (category) => category !== action.item
           ),
-        },
-      };
-
-    case 'FILTER_TOGGLE_EXLUSIVE':
-      return {
-        ...state,
-        filter: {
-          ...state.filter,
-          includeExclusive: action.item,
-        },
-      };
-
-    case 'FILTER_REMOVE_EXLUSIVE':
-      return {
-        ...state,
-        filter: {
-          ...state.filter,
-          includeExclusive: false,
         },
       };
 
@@ -125,8 +112,16 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         filter: {
           ...state.filter,
-          includeCategories: [],
-          includeExclusive: false,
+          activeFilters: [],
+        },
+      };
+
+    case 'FILTER_UPDATE_PRODUCTS':
+      return {
+        ...state,
+        filter: {
+          ...state.filter,
+          filteredProducts: action.item,
         },
       };
 

@@ -1,97 +1,71 @@
-import { useEffect, useMemo } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+import useFilterActions from '../../utils/useFilterActions';
 import Checkbox from '../Shared/Checkbox';
 
 function Sidebar() {
-  const dispatch = useDispatch();
-  const { filter } = useSelector((state) => state);
+  const { handleReset, handleFilterChange, processQueryParams } =
+    useFilterActions();
 
-  const navigate = useNavigate();
-  const location = useLocation();
-  const queryParams = useMemo(
-    () => new URLSearchParams(location.search),
-    [location.search]
-  );
-  const filterLength = Array.from(queryParams).length;
+  const { activeFilters, categories } = useSelector((state) => state.filter);
 
   useEffect(() => {
-    queryParams.forEach((value, key) => {
-      if (key === 'exclusive') {
-        dispatch({
-          type: 'FILTER_TOGGLE_EXLUSIVE',
-          item: value === 'true',
-        });
-      } else
-        dispatch({
-          type: value === 'true' ? 'FILTER_ADD' : 'FILTER_REMOVE',
-          item: key,
-        });
-    });
-
-    return () => {
-      dispatch({
-        type: 'FILTER_RESET',
-      });
-    };
-  }, [dispatch, queryParams]);
-
-  const handleCheckboxChange = (event) => {
-    const { value, checked } = event.target;
-
-    if (checked) {
-      queryParams.set(value, 'true');
-    } else {
-      queryParams.delete(value);
-    }
-
-    navigate(`${location.pathname}?${queryParams.toString()}`);
-  };
-
-  const handleReset = () => {
-    dispatch({
-      type: 'FILTER_RESET',
-    });
-    navigate(location.pathname);
-  };
+    processQueryParams();
+  }, [processQueryParams]);
 
   return (
     <div className="w-full text-lg sm:max-w-[278px] ">
-      <h2 className="mb-4 text-4xl font-bold">
-        Filters
-        {filterLength ? (
-          <span className="ml-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-200 align-middle text-base">
-            {filterLength}
-          </span>
-        ) : null}
-      </h2>
-      <div className="mb-4 flex gap-y-4 gap-x-6 sm:flex-col">
+      <div className="mb-4 flex flex-col gap-y-4 gap-x-6">
         <div>
-          <h3 className="mb-2 text-2xl">Exclusivity</h3>
+          <h3 className="mb-4 text-2xl">Categories</h3>
+          <div className="flex flex-wrap gap-2 sm:flex-col">
+            <NavLink
+              to="/shop"
+              end
+              onClick={handleReset}
+              className={({ isActive }) =>
+                isActive
+                  ? 'rounded-lg bg-gray-300 py-2 px-4'
+                  : 'rounded-lg bg-gray-200 py-2 px-4'
+              }
+            >
+              All products
+            </NavLink>
+            {categories.map((category) => {
+              return (
+                <NavLink
+                  key={category}
+                  to={`/shop/${category}`}
+                  className={({ isActive }) =>
+                    isActive
+                      ? 'rounded-lg bg-gray-300 py-2 px-4 sm:pl-8'
+                      : 'rounded-lg bg-gray-200 py-2 px-4 sm:pl-8'
+                  }
+                  onClick={handleReset}
+                >
+                  {category}
+                </NavLink>
+              );
+            })}
+          </div>
+        </div>
+        <div>
+          <h3 className="mb-2 text-2xl">Filter</h3>
           <Checkbox
             name="exclusive"
             id="exclusive"
             text="Exclusive"
-            checked={filter.includeExclusive}
-            handleChange={handleCheckboxChange}
+            checked={activeFilters.includes('exclusive')}
+            handleChange={handleFilterChange}
           />
-        </div>
-        <div>
-          <h3 className="mb-2 text-2xl">Categories</h3>
-          <div className="flex flex-wrap gap-x-4 gap-y-0 sm:flex-col">
-            {filter.categories.map((category) => {
-              return (
-                <Checkbox
-                  key={category}
-                  name={category}
-                  id={category}
-                  text={category.charAt(0).toUpperCase() + category.slice(1)}
-                  checked={filter.includeCategories.includes(category)}
-                  handleChange={handleCheckboxChange}
-                />
-              );
-            })}
-          </div>
+          <Checkbox
+            name="new"
+            id="new"
+            text="New"
+            checked={activeFilters.includes('new')}
+            handleChange={handleFilterChange}
+          />
         </div>
       </div>
       <button
@@ -99,7 +73,7 @@ function Sidebar() {
         type="button"
         onClick={handleReset}
       >
-        Reset filters
+        Reset filter
       </button>
     </div>
   );

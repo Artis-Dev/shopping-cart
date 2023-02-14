@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
+import useFilterActions from '../../utils/useFilterActions';
 
 function Navigation() {
+  const { handleReset } = useFilterActions();
   const activeStyle = {
     textDecoration: 'underline',
   };
@@ -16,6 +18,7 @@ function Navigation() {
       </NavLink>
       <NavLink
         to="/shop"
+        onClick={handleReset}
         className="link"
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
       >

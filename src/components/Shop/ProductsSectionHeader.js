@@ -1,35 +1,21 @@
-import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRemove } from '@fortawesome/free-solid-svg-icons';
+import useFilterActions from '../../utils/useFilterActions';
 
 function ProductsSectionHeader() {
-  const { filter } = useSelector((state) => state);
-  const navigate = useNavigate();
-  const location = useLocation();
-  const queryParams = useMemo(
-    () => new URLSearchParams(location.search),
-    [location.search]
+  const { activeFilters, filteredProducts } = useSelector(
+    (state) => state.filter
   );
-
-  const allFilters = filter.includeExclusive
-    ? ['exclusive', ...filter.includeCategories]
-    : filter.includeCategories;
-
-  const handleRemoveFilter = (filterItem) => {
-    queryParams.delete(filterItem);
-
-    navigate(`${location.pathname}?${queryParams.toString()}`);
-  };
+  const { handleRemoveFilter } = useFilterActions();
 
   return (
     <>
-      <div className="mb-2 text-sm">Showing: todo</div>
-      {allFilters.length > 0 && (
+      <div className="mb-2 text-sm">Showing: {filteredProducts.length}</div>
+      {activeFilters.length > 0 && (
         <div className="mb-2 flex flex-wrap items-center gap-2">
           <span>Filters:</span>
-          {allFilters.map((activeFilter) => {
+          {activeFilters.map((activeFilter) => {
             return (
               <span
                 key={activeFilter}
