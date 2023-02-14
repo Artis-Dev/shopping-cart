@@ -1,9 +1,12 @@
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
+import useMediaQuery from '../../utils/useMediaQuery';
 import Product from '../Shop/Product';
 
 function FeaturedProductsSection() {
   const { products } = useSelector((state) => state);
+  const big = useMediaQuery('(max-width: 1279px)');
+  const small = useMediaQuery('(max-width: 977px)');
 
   function shuffleArray(array) {
     const shuffledArray = [...array];
@@ -17,17 +20,23 @@ function FeaturedProductsSection() {
     return shuffledArray;
   }
 
-  const randomFourItems = useMemo(() => {
+  const randomItems = useMemo(() => {
+    let numberOfItems;
+    if (small) {
+      numberOfItems = 2;
+    } else {
+      numberOfItems = big ? 3 : 4;
+    }
     const shuffledItems = shuffleArray(products);
-    return shuffledItems.slice(0, 4);
-  }, [products]);
+    return shuffledItems.slice(0, numberOfItems);
+  }, [products, big, small]);
 
   return (
     <div className="mb-6 w-full sm:mb-12">
       <div className="m-auto max-w-screen-xl justify-between px-6 sm:px-12 ">
         <h2 className="mb-6 text-4xl">Featured Products</h2>
         <div className="grid min-w-[278px] grid-cols-[repeat(auto-fit,minmax(278px,1fr))] gap-6">
-          {randomFourItems.map((product) => (
+          {randomItems.map((product) => (
             <Product key={product.id} product={product} />
           ))}
         </div>
