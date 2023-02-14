@@ -20,18 +20,18 @@ function SidebarToggle() {
     >
       {showFilter ? (
         <span>
-          Filter{' '}
+          Filter
           <FontAwesomeIcon
-            className="text-gray-400"
+            className="ml-1 text-gray-400"
             icon={faCaretDown}
             fixedWidth
           />
         </span>
       ) : (
         <span>
-          Filter{' '}
+          Filter
           <FontAwesomeIcon
-            className="text-gray-400"
+            className="ml-1 text-gray-400"
             icon={faCaretRight}
             fixedWidth
           />
