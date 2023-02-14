@@ -17,7 +17,7 @@ function Shop() {
   }, [getFilteredProducts, category]);
 
   return (
-    <div className="m-auto flex max-w-screen-xl flex-col gap-6 p-12 sm:flex-row">
+    <div className="m-auto flex max-w-screen-xl flex-col gap-6 p-6 sm:flex-row sm:p-12">
       <Sidebar />
       <ProductListSection />
     </div>

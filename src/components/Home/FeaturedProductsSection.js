@@ -23,8 +23,8 @@ function FeaturedProductsSection() {
   }, [products]);
 
   return (
-    <div className="mb-12 w-full">
-      <div className="m-auto max-w-screen-xl justify-between px-12 ">
+    <div className="mb-6 w-full sm:mb-12">
+      <div className="m-auto max-w-screen-xl justify-between px-6 sm:px-12 ">
         <h2 className="mb-6 text-4xl">Featured Products</h2>
         <div className="grid min-w-[278px] grid-cols-[repeat(auto-fit,minmax(278px,1fr))] gap-6">
           {randomFourItems.map((product) => (
