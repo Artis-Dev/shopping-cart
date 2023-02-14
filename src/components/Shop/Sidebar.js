@@ -1,18 +1,11 @@
-import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import useFilterActions from '../../utils/useFilterActions';
 import Checkbox from '../Shared/Checkbox';
 
 function Sidebar() {
-  const { handleReset, handleFilterChange, processQueryParams } =
-    useFilterActions();
-
   const { activeFilters, categories } = useSelector((state) => state.filter);
-
-  useEffect(() => {
-    processQueryParams();
-  }, [processQueryParams]);
+  const { handleReset, handleFilterChange } = useFilterActions();
 
   return (
     <div className="w-full text-lg sm:max-w-[278px] ">
