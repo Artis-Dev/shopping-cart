@@ -41,6 +41,7 @@ const products = [
     image: mickey,
     category: 'amet',
     exclusive: true,
+    new: true,
   },
   // {
   //   id: uniqid(),

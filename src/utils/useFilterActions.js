@@ -58,20 +58,18 @@ const useFilterActions = () => {
   const getFilteredProducts = useCallback(
     (category) => {
       const includeExclusive = filter.activeFilters.includes('exclusive');
+      const includeNew = filter.activeFilters.includes('new');
       const isSelectedCategory = (product) => product.category === category;
 
-      const filteredArray = products.filter((product) => {
-        if (includeExclusive && category) {
-          return product.exclusive && isSelectedCategory(product);
-        }
-        if (includeExclusive) {
-          return product.exclusive;
-        }
-        if (category) {
-          return isSelectedCategory(product);
-        }
-        return true;
-      });
+      const filterFunctions = [
+        (product) => !includeExclusive || product.exclusive,
+        (product) => !includeNew || product.new,
+        (product) => !category || isSelectedCategory(product),
+      ];
+
+      const filteredArray = products.filter((product) =>
+        filterFunctions.every((filterFunction) => filterFunction(product))
+      );
 
       dispatch({
         type: 'FILTER_UPDATE_PRODUCTS',
