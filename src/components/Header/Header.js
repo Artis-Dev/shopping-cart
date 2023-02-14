@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import useMediaQuery from '../../hooks/useMediaQuery';
+import useMediaQuery from '../../utils/useMediaQuery';
 import Navigation from './Navigation';
 import SideNav from './SideNav';
 import CartLink from './CartLink';
