@@ -5,6 +5,7 @@ const initialState = {
   products,
   cart: [],
   showNav: false,
+  showFilter: false,
   filter: {
     categories: ['ipsum', 'dolor', 'amet'],
     activeFilters: [],
@@ -76,10 +77,22 @@ const reducer = (state = initialState, action = {}) => {
         showNav: !state.showNav,
       };
 
+    case 'TOGGLE_FILTER':
+      return {
+        ...state,
+        showFilter: !state.showFilter,
+      };
+
     case 'DISABLE_NAV':
       return {
         ...state,
         showNav: false,
+      };
+
+    case 'DISABLE_FILTER':
+      return {
+        ...state,
+        showFilter: false,
       };
 
     case 'FILTER_ADD':
