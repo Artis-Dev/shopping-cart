@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import useFilterActions from '../utils/useFilterActions';
-import ProductsSection from '../components/Shop/ProductsSection';
+import ProductListSection from '../components/Shop/ProductListSection';
 import Sidebar from '../components/Shop/Sidebar';
 
 function Shop() {
@@ -19,7 +19,7 @@ function Shop() {
   return (
     <div className="m-auto flex max-w-screen-xl flex-col gap-6 p-12 sm:flex-row">
       <Sidebar />
-      <ProductsSection />
+      <ProductListSection />
     </div>
   );
 }

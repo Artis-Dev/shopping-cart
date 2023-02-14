@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRemove } from '@fortawesome/free-solid-svg-icons';
 import useFilterActions from '../../utils/useFilterActions';
 
-function ProductsSectionHeader() {
+function ProductListSectionHeader() {
   const { activeFilters, filteredProducts } = useSelector(
     (state) => state.filter
   );
@@ -38,4 +38,4 @@ function ProductsSectionHeader() {
   );
 }
 
-export default ProductsSectionHeader;
+export default ProductListSectionHeader;
