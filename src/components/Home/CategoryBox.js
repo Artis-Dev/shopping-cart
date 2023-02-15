@@ -5,7 +5,7 @@ function CategoryBox({ text, category }) {
   return (
     <Link
       to={`/shop/${category}`}
-      className="flex h-64 w-full grow rounded-lg bg-gray-200 p-6"
+      className="flex h-60 w-full grow rounded-lg bg-gray-200 p-6"
     >
       <div className="text-3xl">{text}</div>
     </Link>
