@@ -9,8 +9,10 @@ function CartListFooter() {
   }, 0);
 
   return (
-    <div className="mt-3 flex border-t pt-3 font-semibold">
-      <div className="grow text-right">{prettyPrice(totalPrice)}</div>
+    <div className="mt-3 flex border-t pt-3 ">
+      <div className="grow text-right font-semibold">
+        {prettyPrice(totalPrice)}
+      </div>
     </div>
   );
 }
