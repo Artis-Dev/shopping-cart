@@ -4,26 +4,6 @@ import CartListItemQuantity from './CartListItemQuantity';
 import CartListItemRemove from './CartListItemRemove';
 
 function CartListItem({ product }) {
-  // eslint-disable-next-line no-unused-vars
-  const oldLayout = (
-    <div
-      className="mb-3 flex h-32 basis-0 items-center justify-between gap-4 md:bg-gray-300"
-      key={product.id}
-    >
-      <div className="w-32 shrink-0">
-        <img className="max-h-32" src={product.image} alt="" />
-      </div>
-      <div className="grow basis-1/3">{product.name}</div>
-      <div className="grow basis-1/6 text-right">
-        {prettyPrice(product.price)}
-      </div>
-      <CartListItemQuantity product={product} />
-      <div className="grow basis-1/6 text-right">
-        {prettyPrice(product.price * product.quantity)}
-      </div>
-    </div>
-  );
-
   return (
     <div className="mb-3 flex gap-2 border-b pb-3 last:mb-0 last:border-0 last:pb-0">
       <div className="h-32 w-24 shrink-0 sm:w-32">
