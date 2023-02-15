@@ -28,7 +28,7 @@ function Sidebar() {
       {isMobile ? <SidebarToggle /> : null}
       {(isMobile && showFilter) || !isMobile ? (
         <>
-          <div className="mb-4 flex flex-col gap-y-4 gap-x-6">
+          <div className="my-4 flex flex-col gap-y-4 gap-x-6 sm:mt-0">
             <div>
               <h3 className="mb-4 text-2xl">Categories</h3>
               <SidebarCategories />

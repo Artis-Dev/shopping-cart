@@ -18,7 +18,7 @@ function CartListItem({ product }) {
             <CartListItemQuantity product={product} />
             <CartListItemRemove product={product} />
           </div>
-          <div className="flex h-auto shrink-0 font-semibold md:w-32 md:justify-end">
+          <div className="flex h-auto shrink-0 self-end font-semibold md:w-32 md:justify-end md:self-center">
             {prettyPrice(product.price * product.quantity)}
           </div>
         </div>
