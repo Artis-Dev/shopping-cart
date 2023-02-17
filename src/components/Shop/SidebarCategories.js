@@ -32,7 +32,7 @@ function SidebarCategories() {
             }
             onClick={handleReset}
           >
-            {category}
+            {category.charAt(0).toUpperCase() + category.slice(1)}
           </NavLink>
         );
       })}

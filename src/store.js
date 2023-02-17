@@ -7,7 +7,7 @@ const initialState = {
   showNav: false,
   showFilter: false,
   filter: {
-    categories: ['ipsum', 'dolor', 'amet'],
+    categories: ['movies', 'television', 'games'],
     activeFilters: [],
     filteredProducts: [],
   },
