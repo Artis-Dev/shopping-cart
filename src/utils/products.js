@@ -44,6 +44,7 @@ const products = [
     image: img59254,
     category: 'movies',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -52,6 +53,7 @@ const products = [
     image: img60279,
     category: 'movies',
     exclusive: true,
+    new: false,
   },
   {
     id: uniqid(),
@@ -60,6 +62,7 @@ const products = [
     image: img60462,
     category: 'movies',
     exclusive: true,
+    new: false,
   },
   {
     id: uniqid(),
@@ -68,6 +71,7 @@ const products = [
     image: img54296,
     category: 'movies',
     exclusive: true,
+    new: false,
   },
   {
     id: uniqid(),
@@ -76,6 +80,7 @@ const products = [
     image: img67606,
     category: 'movies',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -84,6 +89,7 @@ const products = [
     image: img48891,
     category: 'movies',
     exclusive: true,
+    new: false,
   },
   {
     id: uniqid(),
@@ -92,6 +98,7 @@ const products = [
     image: img48063,
     category: 'movies',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -100,6 +107,7 @@ const products = [
     image: img65653,
     category: 'movies',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -108,6 +116,7 @@ const products = [
     image: img65650,
     category: 'movies',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -116,6 +125,7 @@ const products = [
     image: img65641,
     category: 'movies',
     exclusive: false,
+    new: true,
   },
   {
     id: uniqid(),
@@ -124,6 +134,7 @@ const products = [
     image: img65643,
     category: 'movies',
     exclusive: false,
+    new: true,
   },
   {
     id: uniqid(),
@@ -132,6 +143,7 @@ const products = [
     image: img63984,
     category: 'movies',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -140,6 +152,7 @@ const products = [
     image: img59621,
     category: 'television',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -148,6 +161,7 @@ const products = [
     image: img59623,
     category: 'television',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -156,6 +170,7 @@ const products = [
     image: img68620,
     category: 'television',
     exclusive: true,
+    new: false,
   },
   {
     id: uniqid(),
@@ -164,6 +179,7 @@ const products = [
     image: img57813,
     category: 'television',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -172,6 +188,7 @@ const products = [
     image: img57814,
     category: 'television',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -180,6 +197,7 @@ const products = [
     image: img57815,
     category: 'television',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -188,6 +206,7 @@ const products = [
     image: img58846,
     category: 'television',
     exclusive: true,
+    new: false,
   },
   {
     id: uniqid(),
@@ -196,6 +215,7 @@ const products = [
     image: img57641,
     category: 'television',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -204,6 +224,7 @@ const products = [
     image: img57643,
     category: 'television',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -212,6 +233,7 @@ const products = [
     image: img54463,
     category: 'television',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -220,6 +242,7 @@ const products = [
     image: img46627,
     category: 'television',
     exclusive: false,
+    new: true,
   },
   {
     id: uniqid(),
@@ -228,6 +251,7 @@ const products = [
     image: img68854,
     category: 'television',
     exclusive: true,
+    new: true,
   },
   {
     id: uniqid(),
@@ -236,6 +260,7 @@ const products = [
     image: img59331,
     category: 'games',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -244,6 +269,7 @@ const products = [
     image: img59333,
     category: 'games',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -252,6 +278,7 @@ const products = [
     image: img61416,
     category: 'games',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -260,6 +287,7 @@ const products = [
     image: img61417,
     category: 'games',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -268,6 +296,7 @@ const products = [
     image: img65419,
     category: 'games',
     exclusive: false,
+    new: true,
   },
   {
     id: uniqid(),
@@ -276,6 +305,7 @@ const products = [
     image: img65422,
     category: 'games',
     exclusive: false,
+    new: true,
   },
   {
     id: uniqid(),
@@ -284,6 +314,7 @@ const products = [
     image: img55922,
     category: 'games',
     exclusive: true,
+    new: false,
   },
   {
     id: uniqid(),
@@ -292,6 +323,7 @@ const products = [
     image: img64636,
     category: 'games',
     exclusive: true,
+    new: false,
   },
   {
     id: uniqid(),
@@ -300,6 +332,7 @@ const products = [
     image: img65041,
     category: 'games',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -308,6 +341,7 @@ const products = [
     image: img65042,
     category: 'games',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -316,6 +350,7 @@ const products = [
     image: img65043,
     category: 'games',
     exclusive: false,
+    new: false,
   },
   {
     id: uniqid(),
@@ -324,6 +359,7 @@ const products = [
     image: img64231,
     category: 'games',
     exclusive: false,
+    new: false,
   },
 ];
 
