@@ -10,10 +10,10 @@ function ProductListSectionHeader() {
   const { handleRemoveFilter } = useFilterActions();
 
   return (
-    <>
+    <div className="mb-6">
       <div className="mb-2 text-sm">Showing: {filteredProducts.length}</div>
       {activeFilters.length > 0 && (
-        <div className="mb-2 flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <span>Filters:</span>
           {activeFilters.map((activeFilter) => {
             return (
@@ -34,7 +34,7 @@ function ProductListSectionHeader() {
           })}
         </div>
       )}
-    </>
+    </div>
   );
 }
 

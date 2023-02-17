@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import Product from './Product';
+import ProductListNotFound from './ProductListNotFound';
 
 function ProductList() {
   const { filter } = useSelector((state) => state);
@@ -11,7 +12,7 @@ function ProductList() {
           return <Product key={product.id} product={product} />;
         })
       ) : (
-        <p>no products</p>
+        <ProductListNotFound />
       )}
     </div>
   );
