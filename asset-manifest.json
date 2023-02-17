@@ -1,14 +1,49 @@
 {
   "files": {
     "main.css": "/shopping-cart/static/css/main.ed7b9437.css",
-    "main.js": "/shopping-cart/static/js/main.27c80bef.js",
-    "static/media/mickey.webp": "/shopping-cart/static/media/mickey.8799f6e4f6b911b299b7.webp",
+    "main.js": "/shopping-cart/static/js/main.c341db71.js",
+    "static/media/55922.webp": "/shopping-cart/static/media/55922.f2bf771489c07521dde3.webp",
+    "static/media/59333.webp": "/shopping-cart/static/media/59333.f459afe3f2eaa5033825.webp",
+    "static/media/64231.webp": "/shopping-cart/static/media/64231.f5d2bb202d2f9e34cfa9.webp",
+    "static/media/65643.webp": "/shopping-cart/static/media/65643.467772a0cfbd2124d41a.webp",
+    "static/media/65641.webp": "/shopping-cart/static/media/65641.d275a26bc89a2bc66c09.webp",
+    "static/media/61417.webp": "/shopping-cart/static/media/61417.5580f0b919cc2269964e.webp",
+    "static/media/65419.webp": "/shopping-cart/static/media/65419.259c58c95906b3c5de9d.webp",
+    "static/media/68620.webp": "/shopping-cart/static/media/68620.b40bab8991d03da82568.webp",
+    "static/media/48891.webp": "/shopping-cart/static/media/48891.3b56c0d6ce9990d2c745.webp",
+    "static/media/54296.webp": "/shopping-cart/static/media/54296.61655e314160000be61f.webp",
+    "static/media/61416.webp": "/shopping-cart/static/media/61416.b7278c3a0994d5936b61.webp",
+    "static/media/46627.webp": "/shopping-cart/static/media/46627.0a450363f0c73b27d13b.webp",
+    "static/media/57643.webp": "/shopping-cart/static/media/57643.0e7bd79473589045020f.webp",
+    "static/media/57813.webp": "/shopping-cart/static/media/57813.d4c85f5bdbc337882fa1.webp",
+    "static/media/48063.webp": "/shopping-cart/static/media/48063.b4fe91418002149d0041.webp",
+    "static/media/64636.webp": "/shopping-cart/static/media/64636.a2ec88441576dc8dc0d0.webp",
+    "static/media/59331.webp": "/shopping-cart/static/media/59331.7af897b3690bd3a91d03.webp",
+    "static/media/65042.webp": "/shopping-cart/static/media/65042.6c5a75c64348a87625f8.webp",
+    "static/media/65422.webp": "/shopping-cart/static/media/65422.c2b4410a89ba108fad09.webp",
+    "static/media/68854.webp": "/shopping-cart/static/media/68854.3320884554f7ae74439e.webp",
+    "static/media/57814.webp": "/shopping-cart/static/media/57814.150400685da40eda951c.webp",
+    "static/media/67606.webp": "/shopping-cart/static/media/67606.1518425f3eb99c6fddd5.webp",
+    "static/media/57815.webp": "/shopping-cart/static/media/57815.d5cbd712e615341174f7.webp",
+    "static/media/58846.webp": "/shopping-cart/static/media/58846.2e72870012701eb0ff36.webp",
+    "static/media/65653.webp": "/shopping-cart/static/media/65653.e28a54cb9e8a76d5f4af.webp",
+    "static/media/59623.webp": "/shopping-cart/static/media/59623.8799f6e4f6b911b299b7.webp",
+    "static/media/57641.webp": "/shopping-cart/static/media/57641.9e307c3699cc4d8927de.webp",
+    "static/media/65043.webp": "/shopping-cart/static/media/65043.918726030e30fdc4e69e.webp",
+    "static/media/59621.webp": "/shopping-cart/static/media/59621.f58eead626034bcf8ca1.webp",
+    "static/media/60462.webp": "/shopping-cart/static/media/60462.bf1cfe252c32886f0be5.webp",
+    "static/media/65041.webp": "/shopping-cart/static/media/65041.2b81e05597c23ad8b3fd.webp",
+    "static/media/59254.webp": "/shopping-cart/static/media/59254.1b156e8172f2c5830692.webp",
+    "static/media/54463.webp": "/shopping-cart/static/media/54463.8aff7531e80f8b703d1f.webp",
+    "static/media/60279.webp": "/shopping-cart/static/media/60279.87a8fd014b47a4217207.webp",
+    "static/media/65650.webp": "/shopping-cart/static/media/65650.373b201785a76e247807.webp",
+    "static/media/63984.webp": "/shopping-cart/static/media/63984.a429a1dc1e1aeba0a5ef.webp",
     "index.html": "/shopping-cart/index.html",
     "main.ed7b9437.css.map": "/shopping-cart/static/css/main.ed7b9437.css.map",
-    "main.27c80bef.js.map": "/shopping-cart/static/js/main.27c80bef.js.map"
+    "main.c341db71.js.map": "/shopping-cart/static/js/main.c341db71.js.map"
   },
   "entrypoints": [
     "static/css/main.ed7b9437.css",
-    "static/js/main.27c80bef.js"
+    "static/js/main.c341db71.js"
   ]
 }
