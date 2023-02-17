@@ -14,22 +14,27 @@ const router = createBrowserRouter(
         {
           path: '/',
           element: <Home />,
+          exact: true,
         },
         {
           path: 'shop',
           element: <Shop />,
+          exact: true,
         },
         {
           path: 'shop/:category',
           element: <Shop />,
+          exact: true,
         },
         {
           path: 'cart',
           element: <Cart />,
+          exact: true,
         },
         {
           path: 'contacts',
           element: <Contacts />,
+          exact: true,
         },
         {
           path: '*',
