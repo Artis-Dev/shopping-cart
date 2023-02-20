@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretRight, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 function SidebarToggle() {
-  const { showFilter } = useSelector((state) => state);
+  const { showFilter } = useSelector((state) => state.ui);
   const dispatch = useDispatch();
 
   const handleToggleFilter = () => {

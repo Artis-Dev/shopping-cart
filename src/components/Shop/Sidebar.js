@@ -8,7 +8,7 @@ import SidebarToggle from './SidebarToggle';
 
 function Sidebar() {
   const { activeFilters } = useSelector((state) => state.filter);
-  const { showFilter } = useSelector((state) => state);
+  const { showFilter } = useSelector((state) => state.ui);
   const { handleReset, handleFilterChange } = useFilterActions();
   const dispatch = useDispatch();
   const isMobile = useMediaQuery('(max-width: 639px)');
