@@ -71,6 +71,16 @@ const useFilterActions = () => {
         filterFunctions.every((filterFunction) => filterFunction(product))
       );
 
+      if (filter.sort === 'priceLow') {
+        filteredArray.sort((a, b) => {
+          return a.price - b.price;
+        });
+      } else if (filter.sort === 'priceHigh') {
+        filteredArray.sort((a, b) => {
+          return b.price - a.price;
+        });
+      }
+
       dispatch({
         type: 'FILTER_UPDATE_PRODUCTS',
         item: filteredArray,
@@ -78,7 +88,7 @@ const useFilterActions = () => {
 
       return filteredArray;
     },
-    [dispatch, filter.activeFilters, products]
+    [dispatch, filter.activeFilters, products, filter.sort]
   );
 
   return {

@@ -25,6 +25,7 @@ function ProductListSort() {
             className="rounded-lg p-1"
             name="sort"
             id="sort"
+            value={sort}
           >
             <option value="featured">Featured</option>
             <option value="priceLow">Price: Low-High</option>

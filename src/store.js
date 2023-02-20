@@ -141,6 +141,7 @@ const reducer = (state = initialState, action = {}) => {
         filter: {
           ...state.filter,
           activeFilters: [],
+          sort: 'featured',
         },
       };
 
