@@ -1,5 +1,5 @@
 import ProductList from './ProductList';
-import ProductListSectionHeader from './ProductListSectionHeader';
+import ProductListSectionHeader from './ProductListHeader';
 
 function ProductListSection() {
   return (

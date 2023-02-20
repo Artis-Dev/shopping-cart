@@ -3,15 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRemove } from '@fortawesome/free-solid-svg-icons';
 import useFilterActions from '../../utils/useFilterActions';
 
-function ProductListSectionHeader() {
-  const { activeFilters, filteredProducts } = useSelector(
-    (state) => state.filter
-  );
+function ProductListActiveFilters() {
+  const { activeFilters } = useSelector((state) => state.filter);
   const { handleRemoveFilter } = useFilterActions();
 
   return (
-    <div className="mb-6">
-      <div className="mb-2 text-sm">Showing: {filteredProducts.length}</div>
+    <div>
       {activeFilters.length > 0 && (
         <div className="flex flex-wrap items-center gap-2">
           <span>Filters:</span>
@@ -38,4 +35,4 @@ function ProductListSectionHeader() {
   );
 }
 
-export default ProductListSectionHeader;
+export default ProductListActiveFilters;

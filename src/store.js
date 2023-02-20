@@ -10,6 +10,7 @@ const initialState = {
     categories: ['movies', 'television', 'games'],
     activeFilters: [],
     filteredProducts: [],
+    sort: 'featured', // featured/priceLow/PriceHigh
   },
 };
 
@@ -135,6 +136,15 @@ const reducer = (state = initialState, action = {}) => {
         filter: {
           ...state.filter,
           filteredProducts: action.item,
+        },
+      };
+
+    case 'FILTER_CHANGE_SORT':
+      return {
+        ...state,
+        filter: {
+          ...state.filter,
+          sort: action.item,
         },
       };
 
