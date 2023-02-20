@@ -1,14 +1,11 @@
 import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import useFilterActions from '../../utils/useFilterActions';
 
 function ProductListSort() {
-  const dispatch = useDispatch();
   const { filteredProducts, sort } = useSelector((state) => state.filter);
 
-  const handleChangeSort = (event) => {
-    const { value } = event.target;
-    dispatch({ type: 'FILTER_CHANGE_SORT', item: value });
-  };
+  const { handleChangeSort } = useFilterActions();
 
   useEffect(() => {
     console.log(sort);

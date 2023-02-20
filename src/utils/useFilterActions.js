@@ -42,6 +42,11 @@ const useFilterActions = () => {
           type: 'FILTER_ADD',
           item: key,
         });
+      } else if (key === 'sort') {
+        dispatch({
+          type: 'FILTER_CHANGE_SORT',
+          item: value,
+        });
       }
     });
   }, [dispatch, queryParams]);
@@ -91,12 +96,26 @@ const useFilterActions = () => {
     [dispatch, filter.activeFilters, products, filter.sort]
   );
 
+  const handleChangeSort = (event) => {
+    const { value } = event.target;
+    dispatch({ type: 'FILTER_CHANGE_SORT', item: value });
+
+    if (value !== 'featured') {
+      queryParams.set('sort', value);
+    } else {
+      queryParams.delete('sort');
+    }
+
+    navigate(`${location.pathname}?${queryParams.toString()}`);
+  };
+
   return {
     handleReset,
     handleFilterChange,
     processQueryParams,
     handleRemoveFilter,
     getFilteredProducts,
+    handleChangeSort,
   };
 };
 
