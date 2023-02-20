@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import useFilterActions from '../../utils/useFilterActions';
 
@@ -6,10 +5,6 @@ function ProductListSort() {
   const { filteredProducts, sort } = useSelector((state) => state.filter);
 
   const { handleChangeSort } = useFilterActions();
-
-  useEffect(() => {
-    console.log(sort);
-  }, [sort]);
 
   return (
     <div className="flex items-center justify-between">
