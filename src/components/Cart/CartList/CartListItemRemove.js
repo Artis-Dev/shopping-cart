@@ -7,7 +7,7 @@ function CartListItemRemove({ product }) {
   const dispatch = useDispatch();
 
   const handleRemove = (item) => {
-    dispatch({ type: 'REMOVE_CART_ITEM', item });
+    dispatch({ type: 'CART_REMOVE', item });
   };
 
   return (

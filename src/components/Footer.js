@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 
 function Footer() {
-  const { showNav } = useSelector((state) => state);
+  const { showNav } = useSelector((state) => state.ui);
 
   return (
     <footer

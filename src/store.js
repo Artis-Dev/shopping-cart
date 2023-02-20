@@ -4,8 +4,10 @@ import products from './utils/products';
 const initialState = {
   products,
   cart: [],
-  showNav: false,
-  showFilter: false,
+  ui: {
+    showNav: false,
+    showFilter: false,
+  },
   filter: {
     categories: ['movies', 'television', 'games'],
     activeFilters: [],
@@ -17,7 +19,7 @@ const initialState = {
 const reducer = (state = initialState, action = {}) => {
   let itemIndex;
   switch (action.type) {
-    case 'ADD_TO_CART':
+    case 'CART_ADD':
       itemIndex = state.cart.findIndex(
         (cartItem) => cartItem.id === action.item.id
       );
@@ -37,7 +39,15 @@ const reducer = (state = initialState, action = {}) => {
         cart: [...state.cart, { ...action.item, quantity: 1 }],
       };
 
-    case 'INCREMENT_CART_ITEM':
+    case 'CART_REMOVE':
+      return {
+        ...state,
+        cart: state.cart.filter((item) => {
+          return item.id !== action.item.id;
+        }),
+      };
+
+    case 'CART_INCREMENT':
       return {
         ...state,
         cart: state.cart.map((item) => {
@@ -48,7 +58,7 @@ const reducer = (state = initialState, action = {}) => {
         }),
       };
 
-    case 'DECREMENT_CART_ITEM':
+    case 'CART_DECREMENT':
       return {
         ...state,
         cart: state.cart
@@ -64,36 +74,40 @@ const reducer = (state = initialState, action = {}) => {
           .filter((item) => item),
       };
 
-    case 'REMOVE_CART_ITEM':
+    case 'UI_TOGGLE_NAV':
       return {
         ...state,
-        cart: state.cart.filter((item) => {
-          return item.id !== action.item.id;
-        }),
+        ui: {
+          ...state.ui,
+          showNav: !state.ui.showNav,
+        },
       };
 
-    case 'TOGGLE_NAV':
+    case 'UI_TOGGLE_FILTER':
       return {
         ...state,
-        showNav: !state.showNav,
+        ui: {
+          ...state.ui,
+          showFilter: !state.ui.showFilter,
+        },
       };
 
-    case 'TOGGLE_FILTER':
+    case 'UI_DISABLE_NAV':
       return {
         ...state,
-        showFilter: !state.showFilter,
+        ui: {
+          ...state.ui,
+          showNav: false,
+        },
       };
 
-    case 'DISABLE_NAV':
+    case 'UI_DISABLE_FILTER':
       return {
         ...state,
-        showNav: false,
-      };
-
-    case 'DISABLE_FILTER':
-      return {
-        ...state,
-        showFilter: false,
+        ui: {
+          ...state.ui,
+          showFilter: false,
+        },
       };
 
     case 'FILTER_ADD':

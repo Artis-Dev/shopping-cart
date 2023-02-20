@@ -14,7 +14,7 @@ function Sidebar() {
   const isMobile = useMediaQuery('(max-width: 639px)');
 
   const disableNav = useCallback(() => {
-    dispatch({ type: 'DISABLE_FILTER' });
+    dispatch({ type: 'UI_DISABLE_FILTER' });
   }, [dispatch]);
 
   useEffect(() => {

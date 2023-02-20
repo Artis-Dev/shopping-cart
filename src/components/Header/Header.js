@@ -9,15 +9,15 @@ import MenuButton from './MenuButton';
 
 function Header() {
   const dispatch = useDispatch();
-  const { showNav } = useSelector((state) => state);
+  const { showNav } = useSelector((state) => state.ui);
   const isMobile = useMediaQuery('(max-width: 639px)');
 
   const toggleNav = useCallback(() => {
-    dispatch({ type: 'TOGGLE_NAV' });
+    dispatch({ type: 'UI_TOGGLE_NAV' });
   }, [dispatch]);
 
   const disableNav = useCallback(() => {
-    dispatch({ type: 'DISABLE_NAV' });
+    dispatch({ type: 'UI_DISABLE_NAV' });
   }, [dispatch]);
 
   const handleShowNav = useCallback(() => {

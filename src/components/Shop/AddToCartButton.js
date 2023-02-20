@@ -5,7 +5,7 @@ function AddToCartButton({ product }) {
   const dispatch = useDispatch();
 
   const handleAddToCart = (item) => {
-    dispatch({ type: 'ADD_TO_CART', item });
+    dispatch({ type: 'CART_ADD', item });
   };
 
   return (

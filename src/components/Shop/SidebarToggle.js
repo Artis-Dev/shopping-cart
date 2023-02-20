@@ -8,7 +8,7 @@ function SidebarToggle() {
 
   const handleToggleFilter = () => {
     dispatch({
-      type: 'TOGGLE_FILTER',
+      type: 'UI_TOGGLE_FILTER',
     });
   };
 

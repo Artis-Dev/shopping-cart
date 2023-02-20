@@ -4,7 +4,7 @@ import Footer from './Footer';
 import Header from './Header/Header';
 
 function Layout() {
-  const { showNav } = useSelector((state) => state);
+  const { showNav } = useSelector((state) => state.ui);
 
   return (
     <div className="flex min-h-screen flex-col bg-white">

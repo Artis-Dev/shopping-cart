@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faClose } from '@fortawesome/free-solid-svg-icons';
 
 function MenuButton({ handleClick }) {
-  const { showNav } = useSelector((state) => state);
+  const { showNav } = useSelector((state) => state.ui);
 
   return (
     <button type="button" onClick={handleClick} className="sidenav h-8 w-8">

@@ -7,11 +7,11 @@ function CartListItemQuantity({ product }) {
   const dispatch = useDispatch();
 
   const handleIncrement = (item) => {
-    dispatch({ type: 'INCREMENT_CART_ITEM', item });
+    dispatch({ type: 'CART_INCREMENT', item });
   };
 
   const handleDecrement = (item) => {
-    dispatch({ type: 'DECREMENT_CART_ITEM', item });
+    dispatch({ type: 'CART_DECREMENT', item });
   };
 
   return (
