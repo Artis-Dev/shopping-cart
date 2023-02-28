@@ -9,7 +9,7 @@ import SidebarToggle from './SidebarToggle';
 function Sidebar() {
   const { activeFilters } = useSelector((state) => state.filter);
   const { showFilter } = useSelector((state) => state.ui);
-  const { handleReset, handleFilterChange } = useFilterActions();
+  const { handleFilterReset, handleFilterChange } = useFilterActions();
   const dispatch = useDispatch();
   const isMobile = useMediaQuery('(max-width: 639px)');
 
@@ -53,13 +53,15 @@ function Sidebar() {
               </div>
             </div>
           </div>
-          <button
-            className="rounded-lg bg-gray-200 py-2 px-4"
-            type="button"
-            onClick={handleReset}
-          >
-            Reset filter
-          </button>
+          {activeFilters.length !== 0 ? (
+            <button
+              className="rounded-lg bg-gray-200 py-2 px-4"
+              type="button"
+              onClick={handleFilterReset}
+            >
+              Reset filter
+            </button>
+          ) : null}
         </>
       ) : null}
     </div>

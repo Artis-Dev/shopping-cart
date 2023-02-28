@@ -14,7 +14,7 @@ const useFilterActions = () => {
 
   const handleReset = () => {
     dispatch({
-      type: 'FILTER_RESET',
+      type: 'RESET',
     });
     navigate(location.pathname);
   };
@@ -32,6 +32,23 @@ const useFilterActions = () => {
     } else {
       queryParams.delete(value);
     }
+
+    navigate(`${location.pathname}?${queryParams.toString()}`);
+  };
+
+  const handleFilterReset = () => {
+    dispatch({
+      type: 'FILTER_RESET',
+    });
+
+    const queryParamsToKeep = ['productCount', 'sort'];
+
+    Array.from(queryParams.keys()).forEach((key) => {
+      if (!queryParamsToKeep.includes(key)) {
+        queryParams.delete(key);
+      }
+    });
+
     navigate(`${location.pathname}?${queryParams.toString()}`);
   };
 
@@ -111,6 +128,7 @@ const useFilterActions = () => {
 
   return {
     handleReset,
+    handleFilterReset,
     handleFilterChange,
     processQueryParams,
     handleRemoveFilter,

@@ -150,7 +150,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         filter: {
           ...state.filter,
-          filteredProducts: action.item,
+          activeFilters: [],
         },
       };
 
