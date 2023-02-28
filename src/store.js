@@ -1,6 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import products from './utils/products';
 
+const PAGE_SIZE_INITIAL_VALUE = 6;
+
 const initialState = {
   products,
   cart: [],
@@ -15,6 +17,8 @@ const initialState = {
   },
   sort: {
     mode: 'featured', // featured/priceLow/PriceHigh
+    currentPage: 1,
+    pageSize: PAGE_SIZE_INITIAL_VALUE,
   },
 };
 
@@ -124,6 +128,10 @@ const reducer = (state = initialState, action = {}) => {
           ...state.filter,
           activeFilters: [...state.filter.activeFilters, action.item],
         },
+        sort: {
+          ...state.sort,
+          currentPage: 1,
+        },
       };
 
     case 'FILTER_REMOVE':
@@ -134,6 +142,10 @@ const reducer = (state = initialState, action = {}) => {
           activeFilters: state.filter.activeFilters.filter(
             (category) => category !== action.item
           ),
+        },
+        sort: {
+          ...state.sort,
+          currentPage: 1,
         },
       };
 
@@ -152,7 +164,10 @@ const reducer = (state = initialState, action = {}) => {
         filter: {
           ...state.filter,
           activeFilters: [],
-          sort: 'featured',
+        },
+        sort: {
+          ...state.sort,
+          currentPage: 1,
         },
       };
 
@@ -164,7 +179,10 @@ const reducer = (state = initialState, action = {}) => {
           activeFilters: [],
         },
         sort: {
+          ...state.sort,
           mode: 'featured',
+          currentPage: 1,
+          pageSize: PAGE_SIZE_INITIAL_VALUE,
         },
       };
 
@@ -175,7 +193,36 @@ const reducer = (state = initialState, action = {}) => {
           ...state.filter,
         },
         sort: {
+          ...state.sort,
           mode: action.item,
+          currentPage: 1,
+        },
+      };
+
+    case 'SORT_CHANGE_CURRENT_PAGE':
+      return {
+        ...state,
+        sort: {
+          ...state.sort,
+          currentPage: action.item,
+        },
+      };
+
+    case 'SORT_INCREMENT_CURRENT_PAGE':
+      return {
+        ...state,
+        sort: {
+          ...state.sort,
+          currentPage: state.sort.currentPage + 1,
+        },
+      };
+
+    case 'SORT_DECREMENT_CURRENT_PAGE':
+      return {
+        ...state,
+        sort: {
+          ...state.sort,
+          currentPage: state.sort.currentPage - 1,
         },
       };
 

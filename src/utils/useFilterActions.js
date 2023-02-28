@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 const useFilterActions = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { products, filter } = useSelector((state) => state);
+  const { products, filter, sort } = useSelector((state) => state);
   const location = useLocation();
   const queryParams = useMemo(
     () => new URLSearchParams(location.search),
@@ -32,6 +32,7 @@ const useFilterActions = () => {
     } else {
       queryParams.delete(value);
     }
+    queryParams.delete('page');
 
     navigate(`${location.pathname}?${queryParams.toString()}`);
   };
@@ -64,6 +65,11 @@ const useFilterActions = () => {
           type: 'SORT_CHANGE_MODE',
           item: value,
         });
+      } else if (key === 'page') {
+        dispatch({
+          type: 'SORT_CHANGE_CURRENT_PAGE',
+          item: Number(value),
+        });
       }
     });
   }, [dispatch, queryParams]);
@@ -74,6 +80,7 @@ const useFilterActions = () => {
       item: filterItem,
     });
     queryParams.delete(filterItem);
+    queryParams.delete('page');
     navigate(`${location.pathname}?${queryParams.toString()}`);
   };
 
@@ -122,6 +129,30 @@ const useFilterActions = () => {
     } else {
       queryParams.delete('sort');
     }
+    queryParams.delete('page');
+
+    navigate(`${location.pathname}?${queryParams.toString()}`);
+  };
+
+
+  const handleChangePage = (action) => {
+    let newPage = sort.currentPage;
+
+    if (action === 'previous') {
+      newPage -= 1;
+    } else if (action === 'next') {
+      newPage += 1;
+    } else if (Number.isInteger(action)) {
+      newPage = action;
+    }
+
+    dispatch({ type: 'SORT_CHANGE_CURRENT_PAGE', item: newPage });
+
+    if (newPage !== 1) {
+      queryParams.set('page', newPage);
+    } else {
+      queryParams.delete('page');
+    }
 
     navigate(`${location.pathname}?${queryParams.toString()}`);
   };
@@ -134,6 +165,7 @@ const useFilterActions = () => {
     handleFilterRemove,
     getFilteredProducts,
     handleChangeSort,
+    handleChangePage,
   };
 };
 
