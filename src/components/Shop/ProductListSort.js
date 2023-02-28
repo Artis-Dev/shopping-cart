@@ -7,9 +7,23 @@ function ProductListSort() {
 
   const { handleChangeSort, handleChangeProductCount } = useFilterActions();
 
+  let firstProductIndex;
+  let lastProductIndex;
+
+  if (typeof sort.pageSize !== 'number') {
+    firstProductIndex = 1;
+    lastProductIndex = filteredProducts.length;
+  } else {
+    firstProductIndex = (sort.currentPage - 1) * sort.pageSize + 1;
+    lastProductIndex = firstProductIndex + sort.pageSize - 1;
+  }
+
   return (
-    <div className="flex items-center justify-between">
-      <div className="mb-2 text-sm">Showing: {filteredProducts.length}</div>
+    <div className="flex flex-wrap items-center justify-between">
+      <div className="mb-2 text-sm">
+        Showing: {firstProductIndex} - {lastProductIndex} of{' '}
+        {filteredProducts.length}
+      </div>
       <div className="mb-2 text-sm">
         <label htmlFor="sort">
           Sort:{' '}
