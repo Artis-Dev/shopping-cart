@@ -2,7 +2,8 @@ import { useSelector } from 'react-redux';
 import useFilterActions from '../../utils/useFilterActions';
 
 function ProductListSort() {
-  const { filteredProducts, sort } = useSelector((state) => state.filter);
+  const { filter, sort } = useSelector((state) => state);
+  const { filteredProducts } = filter;
 
   const { handleChangeSort } = useFilterActions();
 
@@ -17,7 +18,7 @@ function ProductListSort() {
             className="rounded-lg p-1"
             name="sort"
             id="sort"
-            value={sort}
+            value={sort.mode}
           >
             <option value="featured">Featured</option>
             <option value="priceLow">Price: Low-High</option>

@@ -12,7 +12,9 @@ const initialState = {
     categories: ['movies', 'television', 'games'],
     activeFilters: [],
     filteredProducts: [],
-    sort: 'featured', // featured/priceLow/PriceHigh
+  },
+  sort: {
+    mode: 'featured', // featured/priceLow/PriceHigh
   },
 };
 
@@ -135,6 +137,15 @@ const reducer = (state = initialState, action = {}) => {
         },
       };
 
+    case 'FILTER_UPDATE_PRODUCTS':
+      return {
+        ...state,
+        filter: {
+          ...state.filter,
+          filteredProducts: action.item,
+        },
+      };
+
     case 'FILTER_RESET':
       return {
         ...state,
@@ -145,12 +156,15 @@ const reducer = (state = initialState, action = {}) => {
         },
       };
 
-    case 'FILTER_UPDATE_PRODUCTS':
+    case 'RESET':
       return {
         ...state,
         filter: {
           ...state.filter,
           activeFilters: [],
+        },
+        sort: {
+          mode: 'featured',
         },
       };
 
@@ -159,7 +173,9 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         filter: {
           ...state.filter,
-          sort: action.item,
+        },
+        sort: {
+          mode: action.item,
         },
       };
 
