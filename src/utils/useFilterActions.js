@@ -68,7 +68,7 @@ const useFilterActions = () => {
     });
   }, [dispatch, queryParams]);
 
-  const handleRemoveFilter = (filterItem) => {
+  const handleFilterRemove = (filterItem) => {
     dispatch({
       type: 'FILTER_REMOVE',
       item: filterItem,
@@ -131,7 +131,7 @@ const useFilterActions = () => {
     handleFilterReset,
     handleFilterChange,
     processQueryParams,
-    handleRemoveFilter,
+    handleFilterRemove,
     getFilteredProducts,
     handleChangeSort,
   };

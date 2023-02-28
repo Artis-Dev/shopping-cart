@@ -5,7 +5,7 @@ import useFilterActions from '../../utils/useFilterActions';
 
 function ProductListActiveFilters() {
   const { activeFilters } = useSelector((state) => state.filter);
-  const { handleRemoveFilter } = useFilterActions();
+  const { handleFilterRemove } = useFilterActions();
 
   return (
     <div>
@@ -21,7 +21,7 @@ function ProductListActiveFilters() {
                 <span>{activeFilter}</span>
                 <button
                   type="button"
-                  onClick={() => handleRemoveFilter(activeFilter)}
+                  onClick={() => handleFilterRemove(activeFilter)}
                   className="ml-1 inline-flex h-3 w-3"
                 >
                   <FontAwesomeIcon icon={faRemove} size="xs" />
