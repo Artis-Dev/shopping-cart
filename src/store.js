@@ -168,7 +168,7 @@ const reducer = (state = initialState, action = {}) => {
         },
       };
 
-    case 'FILTER_CHANGE_SORT':
+    case 'SORT_CHANGE_MODE':
       return {
         ...state,
         filter: {

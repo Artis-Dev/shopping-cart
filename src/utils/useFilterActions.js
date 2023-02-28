@@ -61,7 +61,7 @@ const useFilterActions = () => {
         });
       } else if (key === 'sort') {
         dispatch({
-          type: 'FILTER_CHANGE_SORT',
+          type: 'SORT_CHANGE_MODE',
           item: value,
         });
       }
@@ -115,7 +115,7 @@ const useFilterActions = () => {
 
   const handleChangeSort = (event) => {
     const { value } = event.target;
-    dispatch({ type: 'FILTER_CHANGE_SORT', item: value });
+    dispatch({ type: 'SORT_CHANGE_MODE', item: value });
 
     if (value !== 'featured') {
       queryParams.set('sort', value);
