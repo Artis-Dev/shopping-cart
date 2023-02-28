@@ -7,6 +7,9 @@ function ProductList() {
   const { filter, sort } = useSelector((state) => state);
 
   const currentFilteredProducts = useMemo(() => {
+    if (sort.pageSize === 'all') {
+      return filter.filteredProducts;
+    }
     const firstPageIndex = (sort.currentPage - 1) * sort.pageSize;
     const lastPageIndex = firstPageIndex + sort.pageSize;
     return filter.filteredProducts.slice(firstPageIndex, lastPageIndex);

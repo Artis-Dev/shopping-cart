@@ -65,6 +65,11 @@ const useFilterActions = () => {
           type: 'SORT_CHANGE_MODE',
           item: value,
         });
+      } else if (key === 'productCount') {
+        dispatch({
+          type: 'SORT_CHANGE_PAGE_SIZE',
+          item: value === 'all' ? 'all' : Number(value),
+        });
       } else if (key === 'page') {
         dispatch({
           type: 'SORT_CHANGE_CURRENT_PAGE',
@@ -134,6 +139,22 @@ const useFilterActions = () => {
     navigate(`${location.pathname}?${queryParams.toString()}`);
   };
 
+  const handleChangeProductCount = (event) => {
+    const { value } = event.target;
+    dispatch({
+      type: 'SORT_CHANGE_PAGE_SIZE',
+      item: value === 'all' ? 'all' : Number(value),
+    });
+
+    if (value !== 6) {
+      queryParams.set('productCount', value);
+    } else {
+      queryParams.delete('productCount');
+    }
+    queryParams.delete('page');
+
+    navigate(`${location.pathname}?${queryParams.toString()}`);
+  };
 
   const handleChangePage = (action) => {
     let newPage = sort.currentPage;
@@ -165,6 +186,7 @@ const useFilterActions = () => {
     handleFilterRemove,
     getFilteredProducts,
     handleChangeSort,
+    handleChangeProductCount,
     handleChangePage,
   };
 };

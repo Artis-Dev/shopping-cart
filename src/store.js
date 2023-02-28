@@ -199,6 +199,16 @@ const reducer = (state = initialState, action = {}) => {
         },
       };
 
+    case 'SORT_CHANGE_PAGE_SIZE':
+      return {
+        ...state,
+        sort: {
+          ...state.sort,
+          pageSize: action.item,
+          currentPage: 1,
+        },
+      };
+
     case 'SORT_CHANGE_CURRENT_PAGE':
       return {
         ...state,
