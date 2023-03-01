@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -65,10 +65,21 @@ const useSortActions = () => {
     navigate(`${location.pathname}?${queryParams.toString()}`);
   };
 
+  const sortProducts = useCallback((products, sortMode) => {
+    const sortedArray = [...products];
+    if (sortMode === 'priceLow') {
+      sortedArray.sort((a, b) => a.price - b.price);
+    } else if (sortMode === 'priceHigh') {
+      sortedArray.sort((a, b) => b.price - a.price);
+    }
+    return sortedArray;
+  }, []);
+
   return {
     handleChangeSort,
     handleChangeProductCount,
     handleChangePage,
+    sortProducts,
   };
 };
 

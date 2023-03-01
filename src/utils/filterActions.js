@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
+import useSortActions from './sortActions';
 
 const useFilterActions = () => {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ const useFilterActions = () => {
     () => new URLSearchParams(location.search),
     [location.search]
   );
+  const { sortProducts } = useSortActions();
 
   const handleFilterChange = (event) => {
     const { value, checked } = event.target;
@@ -68,19 +70,13 @@ const useFilterActions = () => {
         (product) => !category || isSelectedCategory(product),
       ];
 
-      const filteredArray = products.filter((product) =>
+      const sortedArray = sortProducts(products, sort.mode);
+
+      const filteredArray = sortedArray.filter((product) =>
         filterFunctions.every((filterFunction) => filterFunction(product))
       );
 
-      if (sort.mode === 'priceLow') {
-        filteredArray.sort((a, b) => {
-          return a.price - b.price;
-        });
-      } else if (sort.mode === 'priceHigh') {
-        filteredArray.sort((a, b) => {
-          return b.price - a.price;
-        });
-      }
+      // const sortedArray = sortProducts(filteredArray, sort.mode);
 
       dispatch({
         type: 'FILTER_UPDATE_PRODUCTS',
@@ -89,7 +85,7 @@ const useFilterActions = () => {
 
       return filteredArray;
     },
-    [dispatch, filter.activeFilters, products, sort.mode]
+    [dispatch, filter.activeFilters, products, sort.mode, sortProducts]
   );
 
   return {
