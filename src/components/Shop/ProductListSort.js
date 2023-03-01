@@ -10,12 +10,16 @@ function ProductListSort() {
   let firstProductIndex;
   let lastProductIndex;
 
-  if (typeof sort.pageSize !== 'number') {
+  if (sort.pageSize === 'all') {
     firstProductIndex = 1;
     lastProductIndex = filteredProducts.length;
   } else {
     firstProductIndex = (sort.currentPage - 1) * sort.pageSize + 1;
     lastProductIndex = firstProductIndex + sort.pageSize - 1;
+    lastProductIndex = Math.min(
+      firstProductIndex + sort.pageSize - 1,
+      filteredProducts.length
+    );
   }
 
   return (
