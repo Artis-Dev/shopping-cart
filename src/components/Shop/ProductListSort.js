@@ -10,7 +10,10 @@ function ProductListSort() {
   let firstProductIndex;
   let lastProductIndex;
 
-  if (sort.pageSize === 'all') {
+  if (filteredProducts.length === 0) {
+    firstProductIndex = 0;
+    lastProductIndex = 0;
+  } else if (sort.pageSize === 'all') {
     firstProductIndex = 1;
     lastProductIndex = filteredProducts.length;
   } else {
