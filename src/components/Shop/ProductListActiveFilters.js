@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRemove } from '@fortawesome/free-solid-svg-icons';
-import useFilterActions from '../../utils/useFilterActions';
+import useFilterActions from '../../utils/filterActions';
 
 function ProductListActiveFilters() {
   const { activeFilters } = useSelector((state) => state.filter);

@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux';
-import useFilterActions from '../../utils/useFilterActions';
+import useSortActions from '../../utils/sortActions';
 
 function ProductListSort() {
   const { filter, sort } = useSelector((state) => state);
   const { filteredProducts } = filter;
 
-  const { handleChangeSort, handleChangeProductCount } = useFilterActions();
+  const { handleChangeSort, handleChangeProductCount } = useSortActions();
 
   let firstProductIndex;
   let lastProductIndex;

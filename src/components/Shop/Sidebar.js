@@ -1,6 +1,6 @@
 import { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import useFilterActions from '../../utils/useFilterActions';
+import useFilterActions from '../../utils/filterActions';
 import useMediaQuery from '../../utils/useMediaQuery';
 import Checkbox from '../Shared/Checkbox';
 import SidebarCategories from './SidebarCategories';

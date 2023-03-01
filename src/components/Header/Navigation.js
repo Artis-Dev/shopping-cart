@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux';
 import { NavLink, useParams } from 'react-router-dom';
-import useFilterActions from '../../utils/useFilterActions';
+import useQueryActions from '../../utils/queryActions';
 
 function Navigation() {
   const { categories } = useSelector((state) => state.filter);
   const { category } = useParams();
-  const { handleReset } = useFilterActions();
+  const { handleReset } = useQueryActions();
 
   const activeStyle = {
     textDecoration: 'underline',

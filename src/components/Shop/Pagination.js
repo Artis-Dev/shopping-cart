@@ -2,11 +2,11 @@ import { useSelector } from 'react-redux';
 import uniqId from 'uniqid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
-import useFilterActions from '../../utils/useFilterActions';
 import usePagination from '../../utils/usePagination';
+import useSortActions from '../../utils/sortActions';
 
 function Pagination() {
-  const { handleChangePage } = useFilterActions();
+  const { handleChangePage } = useSortActions();
   const { filter, sort } = useSelector((state) => state);
 
   const totalCount = filter.filteredProducts.length;

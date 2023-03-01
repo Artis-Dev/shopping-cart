@@ -1,14 +1,16 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import useFilterActions from '../utils/useFilterActions';
+import useFilterActions from '../utils/filterActions';
+import useQueryActions from '../utils/queryActions';
 import ProductListSection from '../components/Shop/ProductListSection';
 import Sidebar from '../components/Shop/Sidebar';
 import PageNotFound from './PageNotFound';
 
 function Shop() {
   const { categories } = useSelector((state) => state.filter);
-  const { processQueryParams, getFilteredProducts } = useFilterActions();
+  const { getFilteredProducts } = useFilterActions();
+  const { processQueryParams } = useQueryActions();
   const { category } = useParams();
   const isValidCategory = categories.includes(category);
 

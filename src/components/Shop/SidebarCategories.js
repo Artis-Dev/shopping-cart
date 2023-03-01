@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import useFilterActions from '../../utils/useFilterActions';
+import useQueryActions from '../../utils/queryActions';
 
 function SidebarCategories() {
   const { categories } = useSelector((state) => state.filter);
-  const { handleReset } = useFilterActions();
+  const { handleReset } = useQueryActions();
 
   return (
     <div className="flex flex-wrap gap-2 sm:flex-col">

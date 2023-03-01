@@ -1,9 +1,9 @@
 import { string } from 'prop-types';
 import { Link } from 'react-router-dom';
-import useFilterActions from '../../utils/useFilterActions';
+import useQueryActions from '../../utils/queryActions';
 
 function CategoryBox({ text, category }) {
-  const { handleReset } = useFilterActions();
+  const { handleReset } = useQueryActions();
 
   return (
     <Link
