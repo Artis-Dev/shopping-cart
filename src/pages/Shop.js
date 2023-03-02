@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import useFilterActions from '../utils/filterActions';
 import useQueryActions from '../utils/queryActions';
-import ProductListSection from '../components/Shop/ProductListSection';
+import ProductListSection from '../components/Shop/ProductList/ProductListSection';
 import Sidebar from '../components/Shop/Sidebar';
 import PageNotFound from './PageNotFound';
 

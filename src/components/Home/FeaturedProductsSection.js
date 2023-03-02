@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import useMediaQuery from '../../utils/useMediaQuery';
-import Product from '../Shop/Product';
+import Product from '../Shop/Product/Product';
 
 function FeaturedProductsSection() {
   const { products } = useSelector((state) => state);

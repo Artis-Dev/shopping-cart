@@ -1,9 +1,10 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
-import { number, shape } from 'prop-types';
+import { shape } from 'prop-types';
 
-function CartListItemQuantity({ product }) {
+function ProductCounter({ product }) {
+  const { cart } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   const handleIncrement = (item) => {
@@ -13,6 +14,8 @@ function CartListItemQuantity({ product }) {
   const handleDecrement = (item) => {
     dispatch({ type: 'CART_DECREMENT', item });
   };
+
+  const itemIndex = cart.findIndex((item) => item.id === product.id);
 
   return (
     <div className="flex text-center">
@@ -27,7 +30,7 @@ function CartListItemQuantity({ product }) {
         type="number"
         name=""
         id=""
-        value={product.quantity}
+        value={itemIndex !== -1 ? cart[itemIndex].quantity : 0}
         className="w-9 appearance-none rounded-none bg-gray-50 py-1 px-1 text-center"
         readOnly
         style={{ WebkitAppearance: 'textfield' }}
@@ -43,10 +46,8 @@ function CartListItemQuantity({ product }) {
   );
 }
 
-CartListItemQuantity.propTypes = {
-  product: shape({
-    quantity: number.isRequired,
-  }).isRequired,
+ProductCounter.propTypes = {
+  product: shape({}).isRequired,
 };
 
-export default CartListItemQuantity;
+export default ProductCounter;

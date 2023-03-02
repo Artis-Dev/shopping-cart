@@ -1,6 +1,6 @@
 import { shape, string, number } from 'prop-types';
 import prettyPrice from '../../../utils/prettyPrice';
-import CartListItemQuantity from './CartListItemQuantity';
+import ProductCounter from '../../Shared/ProductCounter';
 import CartListItemRemove from './CartListItemRemove';
 
 function CartListItem({ product }) {
@@ -15,7 +15,7 @@ function CartListItem({ product }) {
         </div>
         <div className="flex h-auto shrink-0 items-center justify-between gap-2 md:justify-center">
           <div className="flex w-[89px] flex-col items-center gap-2">
-            <CartListItemQuantity product={product} />
+            <ProductCounter product={product} />
             <CartListItemRemove product={product} />
           </div>
           <div className="flex h-auto shrink-0 self-end font-semibold md:w-32 md:justify-end md:self-center">

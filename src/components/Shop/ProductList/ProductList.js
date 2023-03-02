@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import Product from './Product';
+import Product from '../Product/Product';
 import ProductListNotFound from './ProductListNotFound';
 
 function ProductList() {

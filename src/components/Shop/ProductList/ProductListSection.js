@@ -1,6 +1,6 @@
 import ProductList from './ProductList';
 import ProductListSectionHeader from './ProductListHeader';
-import Pagination from './Pagination';
+import Pagination from '../Pagination';
 
 function ProductListSection() {
   return (
