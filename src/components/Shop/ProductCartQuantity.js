@@ -7,11 +7,13 @@ function ProductCartQuantity({ product }) {
   const { cart } = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  const handleIncrement = (item) => {
+  const handleIncrement = (item, event) => {
+    event.preventDefault();
     dispatch({ type: 'CART_INCREMENT', item });
   };
 
-  const handleDecrement = (item) => {
+  const handleDecrement = (item, event) => {
+    event.preventDefault();
     dispatch({ type: 'CART_DECREMENT', item });
   };
 
@@ -22,7 +24,7 @@ function ProductCartQuantity({ product }) {
       <button
         type="button"
         className="rounded-l-lg bg-white py-2 px-4 font-bold text-gray-800"
-        onClick={() => handleDecrement(product)}
+        onClick={(e) => handleDecrement(product, e)}
       >
         <FontAwesomeIcon icon={faMinus} size="xs" />
       </button>
@@ -34,11 +36,12 @@ function ProductCartQuantity({ product }) {
         className="p2 flex w-full appearance-none rounded-none border-t-2 border-b-2 border-white bg-gray-200 text-center"
         readOnly
         style={{ WebkitAppearance: 'textfield' }}
+        onClick={(e) => e.preventDefault()}
       />
       <button
         type="button"
         className="rounded-r-lg bg-white py-2 px-4 font-bold text-gray-800"
-        onClick={() => handleIncrement(product)}
+        onClick={(e) => handleIncrement(product, e)}
       >
         <FontAwesomeIcon icon={faPlus} size="xs" />
       </button>
