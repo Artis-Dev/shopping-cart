@@ -22,16 +22,14 @@ function Shop() {
     getFilteredProducts(category);
   }, [getFilteredProducts, category]);
 
+  if (category && !isValidCategory) {
+    return <PageNotFound />;
+  }
+
   return (
-    <div>
-      {category && !isValidCategory ? (
-        <PageNotFound />
-      ) : (
-        <div className="m-auto flex max-w-screen-xl flex-col gap-6 p-6 sm:flex-row sm:p-12">
-          <Sidebar />
-          <ProductListSection />
-        </div>
-      )}
+    <div className="m-auto flex max-w-screen-xl flex-col gap-6 p-6 sm:flex-row sm:p-12">
+      <Sidebar />
+      <ProductListSection />
     </div>
   );
 }
