@@ -54,10 +54,17 @@ const reducer = (state = initialState, action = {}) => {
       };
 
     case 'CART_INCREMENT':
+      itemIndex = state.cart.findIndex((item) => item.id === action.item.id);
+      if (itemIndex === -1) {
+        return {
+          ...state,
+          cart: [...state.cart, { ...action.item, quantity: 1 }],
+        };
+      }
       return {
         ...state,
-        cart: state.cart.map((item) => {
-          if (item.id === action.item.id) {
+        cart: state.cart.map((item, index) => {
+          if (index === itemIndex) {
             return { ...item, quantity: item.quantity + 1 };
           }
           return item;
