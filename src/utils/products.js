@@ -1,4 +1,3 @@
-import uniqid from 'uniqid';
 import img46627 from '../assets/products/46627.webp';
 import img48063 from '../assets/products/48063.webp';
 import img48891 from '../assets/products/48891.webp';
@@ -38,7 +37,7 @@ import img68854 from '../assets/products/68854.webp';
 
 const products = [
   {
-    id: uniqid(),
+    id: '60462',
     name: 'Batman (Battle Damaged) - The Batman',
     price: 18.0,
     image: img60462,
@@ -47,7 +46,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '54296',
     name: 'Scorpion (Action Pose) (Metallic) - Mortal Kombat',
     price: 18.0,
     image: img54296,
@@ -56,7 +55,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '67606',
     name: 'Spider-Man - Spider-Man: No Way Home',
     price: 16.0,
     image: img67606,
@@ -65,7 +64,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '48891',
     name: 'Carnage (Carla Unger) - Venom',
     price: 18.0,
     image: img48891,
@@ -74,7 +73,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '48063',
     name: 'Harry Potter With Invisibility Cloak - Harry Potter',
     price: 16.0,
     image: img48063,
@@ -83,7 +82,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '65653',
     name: 'Hermione (Chamber of Secrets) - Harry Potter',
     price: 16.0,
     image: img65653,
@@ -92,7 +91,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '65650',
     name: 'Dobby (Chamber of Secrets) - Harry Potter',
     price: 16.0,
     image: img65650,
@@ -101,7 +100,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '65641',
     name: 'Jake Sully - Avatar',
     price: 16.0,
     image: img65641,
@@ -110,7 +109,7 @@ const products = [
     new: true,
   },
   {
-    id: uniqid(),
+    id: '65643',
     name: 'Battle Neytiri - Avatar',
     price: 16.0,
     image: img65643,
@@ -119,7 +118,7 @@ const products = [
     new: true,
   },
   {
-    id: uniqid(),
+    id: '59254',
     name: 'Trinity - Matrix (2021)',
     price: 16.0,
     image: img59254,
@@ -128,7 +127,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '60279',
     name: 'Morpheus (Pink Suit) - Matrix (2021)',
     price: 18.0,
     image: img60279,
@@ -137,7 +136,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '63984',
     name: 'Hannibal - The Silence of the Lambs',
     price: 16.0,
     image: img63984,
@@ -146,7 +145,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '59621',
     name: 'Donald Duck - Disney Mickey and Friends',
     price: 16.0,
     image: img59621,
@@ -155,7 +154,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '59623',
     name: 'Minnie Mouse - Disney Mickey and Friends',
     price: 16.0,
     image: img59623,
@@ -164,7 +163,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '68620',
     name: 'Minnie Mouse (Facet) - Disney 100th',
     price: 18.0,
     image: img68620,
@@ -173,7 +172,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '57813',
     name: 'Ciri - The Witcher (Netflix)',
     price: 16.0,
     image: img57813,
@@ -182,7 +181,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '57814',
     name: 'Geralt - The Witcher (Netflix)',
     price: 16.0,
     image: img57814,
@@ -191,7 +190,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '57815',
     name: 'Yennefer - The Witcher (Netflix)',
     price: 16.0,
     image: img57815,
@@ -200,7 +199,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '58846',
     name: 'Jaskier (Green Outfit) - The Witcher (Netflix)',
     price: 18.0,
     image: img58846,
@@ -209,7 +208,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '57641',
     name: 'Haise Sasaki - Tokyo Ghoul:re',
     price: 16.0,
     image: img57641,
@@ -218,7 +217,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '57643',
     name: 'Saiko Yonebayashi - Tokyo Ghoul:re',
     price: 16.0,
     image: img57643,
@@ -227,7 +226,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '54463',
     name: 'Bonekichi - One Piece',
     price: 16.0,
     image: img54463,
@@ -236,7 +235,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '46627',
     name: 'Gaara - Naruto',
     price: 16.0,
     image: img46627,
@@ -245,7 +244,7 @@ const products = [
     new: true,
   },
   {
-    id: uniqid(),
+    id: '68854',
     name: 'Tsunade (Creation Rebirth) - Naruto Shippuden',
     price: 18.0,
     image: img68854,
@@ -254,7 +253,7 @@ const products = [
     new: true,
   },
   {
-    id: uniqid(),
+    id: '59331',
     name: "Tiny Tina - Tiny Tina's Wonderlands",
     price: 16.0,
     image: img59331,
@@ -263,7 +262,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '59333',
     name: "Dragon Lord - Tiny Tina's Wonderlands",
     price: 16.0,
     image: img59333,
@@ -272,7 +271,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '61416',
     name: "Devil's Throne - Cuphead",
     price: 35.0,
     image: img61416,
@@ -281,7 +280,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '61417',
     name: 'Aeroplane Ms. Chalice - Cuphead',
     price: 16.0,
     image: img61417,
@@ -290,7 +289,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '65419',
     name: 'Aether - Genshin Impact',
     price: 16.0,
     image: img65419,
@@ -299,7 +298,7 @@ const products = [
     new: true,
   },
   {
-    id: uniqid(),
+    id: '65422',
     name: 'Paimon - Genshin Impact',
     price: 16.0,
     image: img65422,
@@ -308,7 +307,7 @@ const products = [
     new: true,
   },
   {
-    id: uniqid(),
+    id: '55922',
     name: 'Squirtle (Diamond Collection) - Pokémon',
     price: 22.0,
     image: img55922,
@@ -317,7 +316,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '64636',
     name: 'Eevee (Flocked) - Pokémon',
     price: 18.0,
     image: img64636,
@@ -326,7 +325,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '65041',
     name: 'Cubone - Pokémon',
     price: 16.0,
     image: img65041,
@@ -335,7 +334,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '65042',
     name: 'Flareon - Pokémon',
     price: 16.0,
     image: img65042,
@@ -344,7 +343,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '65043',
     name: 'Pikachu (Grumpy) - Pokémon',
     price: 16.0,
     image: img65043,
@@ -353,7 +352,7 @@ const products = [
     new: false,
   },
   {
-    id: uniqid(),
+    id: '64231',
     name: "Tie-Dye Foxy - Five Nights at Freddy's",
     price: 16.0,
     image: img64231,
