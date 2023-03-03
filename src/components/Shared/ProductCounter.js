@@ -1,20 +1,12 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { shape } from 'prop-types';
+import useCartActions from '../../utils/cartActions';
 
 function ProductCounter({ product }) {
   const { cart } = useSelector((state) => state);
-  const dispatch = useDispatch();
-
-  const handleIncrement = (item) => {
-    dispatch({ type: 'CART_INCREMENT', item });
-  };
-
-  const handleDecrement = (item) => {
-    dispatch({ type: 'CART_DECREMENT', item });
-  };
-
+  const { handleIncrement, handleDecrement } = useCartActions();
   const itemIndex = cart.findIndex((item) => item.id === product.id);
 
   return (
@@ -22,7 +14,7 @@ function ProductCounter({ product }) {
       <button
         type="button"
         className="rounded-l-lg bg-gray-200 py-1 px-2 font-bold text-gray-800"
-        onClick={() => handleDecrement(product)}
+        onClick={(e) => handleDecrement(product, e)}
       >
         <FontAwesomeIcon icon={faMinus} size="xs" />
       </button>
@@ -38,7 +30,7 @@ function ProductCounter({ product }) {
       <button
         type="button"
         className="rounded-r-lg bg-gray-200 py-1 px-2 font-bold text-gray-800"
-        onClick={() => handleIncrement(product)}
+        onClick={(e) => handleIncrement(product, e)}
       >
         <FontAwesomeIcon icon={faPlus} size="xs" />
       </button>

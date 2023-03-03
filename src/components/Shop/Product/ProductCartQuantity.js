@@ -1,22 +1,12 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { shape } from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import useCartActions from '../../../utils/cartActions';
 
 function ProductCartQuantity({ product }) {
   const { cart } = useSelector((state) => state);
-  const dispatch = useDispatch();
-
-  const handleIncrement = (item, event) => {
-    event.preventDefault();
-    dispatch({ type: 'CART_INCREMENT', item });
-  };
-
-  const handleDecrement = (item, event) => {
-    event.preventDefault();
-    dispatch({ type: 'CART_DECREMENT', item });
-  };
-
+  const { handleIncrement, handleDecrement } = useCartActions();
   const productIndex = cart.findIndex((item) => item.id === product.id);
 
   return (

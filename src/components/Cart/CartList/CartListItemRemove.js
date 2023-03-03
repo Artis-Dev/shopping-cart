@@ -1,14 +1,10 @@
-import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRemove } from '@fortawesome/free-solid-svg-icons';
 import { shape } from 'prop-types';
+import useCartActions from '../../../utils/cartActions';
 
 function CartListItemRemove({ product }) {
-  const dispatch = useDispatch();
-
-  const handleRemove = (item) => {
-    dispatch({ type: 'CART_REMOVE', item });
-  };
+  const { handleRemove } = useCartActions();
 
   return (
     <button

@@ -1,13 +1,8 @@
-import { useDispatch } from 'react-redux';
 import { shape } from 'prop-types';
+import useCartActions from '../../../utils/cartActions';
 
 function AddToCartButton({ product }) {
-  const dispatch = useDispatch();
-
-  const handleAddToCart = (item, event) => {
-    event.preventDefault();
-    dispatch({ type: 'CART_ADD', item });
-  };
+  const { handleAddToCart } = useCartActions();
 
   return (
     <button
