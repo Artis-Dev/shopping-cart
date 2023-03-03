@@ -2,10 +2,10 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import prettyPrice from '../utils/prettyPrice';
 import PageNotFound from './PageNotFound';
-import ProductCartQuantity from '../components/Shop/Product/ProductCartQuantity';
-import AddToCartButton from '../components/Shop/Product/AddToCartButton';
+import ProductCartQuantity from '../components/Shop/ProductCartQuantity';
+import AddToCartButton from '../components/Shop/AddToCartButton';
 
-function ProductPage() {
+function Product() {
   const { products, cart } = useSelector((state) => state);
   const { productId } = useParams();
   const product = products.find((item) => item.id === productId);
@@ -48,4 +48,4 @@ function ProductPage() {
   );
 }
 
-export default ProductPage;
+export default Product;

@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import Product from '../Product/Product';
+import ProductBox from '../ProductBox';
 import ProductListNotFound from './ProductListNotFound';
 
 function ProductList() {
@@ -20,7 +20,7 @@ function ProductList() {
       {filter.filteredProducts.length > 0 ? (
         <>
           {currentFilteredProducts.map((product) => {
-            return <Product key={product.id} product={product} />;
+            return <ProductBox key={product.id} product={product} />;
           })}
         </>
       ) : (

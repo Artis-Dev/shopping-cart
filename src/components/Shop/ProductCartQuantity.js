@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { shape } from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
-import useCartActions from '../../../utils/cartActions';
+import useCartActions from '../../utils/cartActions';
 
 function ProductCartQuantity({ product }) {
   const { cart } = useSelector((state) => state);

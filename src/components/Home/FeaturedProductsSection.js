@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import useMediaQuery from '../../utils/useMediaQuery';
-import Product from '../Shop/Product/Product';
+import ProductBox from '../Shop/ProductBox';
 
 function FeaturedProductsSection() {
   const { products } = useSelector((state) => state);
@@ -37,7 +37,7 @@ function FeaturedProductsSection() {
         <h2 className="mb-6 text-4xl">Featured Products</h2>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-3 sm:gap-6">
           {randomItems.map((product) => (
-            <Product key={product.id} product={product} />
+            <ProductBox key={product.id} product={product} />
           ))}
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { shape } from 'prop-types';
-import useCartActions from '../../../utils/cartActions';
+import useCartActions from '../../utils/cartActions';
 
 function AddToCartButton({ product }) {
   const { handleAddToCart } = useCartActions();

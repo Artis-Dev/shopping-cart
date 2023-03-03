@@ -1,7 +1,7 @@
 import { number, shape, string } from 'prop-types';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import prettyPrice from '../../../utils/prettyPrice';
+import prettyPrice from '../../utils/prettyPrice';
 import AddToCartButton from './AddToCartButton';
 import ProductCartQuantity from './ProductCartQuantity';
 
