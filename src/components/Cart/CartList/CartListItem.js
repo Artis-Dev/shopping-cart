@@ -1,7 +1,7 @@
 import { shape, string, number } from 'prop-types';
 import { Link } from 'react-router-dom';
 import prettyPrice from '../../../utils/prettyPrice';
-import ProductCounter from '../../Shared/ProductCounter';
+import CartListItemCounter from './CartListItemCounter';
 import CartListItemRemove from './CartListItemRemove';
 
 function CartListItem({ product }) {
@@ -21,7 +21,7 @@ function CartListItem({ product }) {
         </div>
         <div className="flex h-auto shrink-0 items-center justify-between gap-2 md:justify-center">
           <div className="flex w-[89px] flex-col items-center gap-2">
-            <ProductCounter product={product} />
+            <CartListItemCounter product={product} />
             <CartListItemRemove product={product} />
           </div>
           <div className="flex h-auto shrink-0 self-end font-semibold md:w-32 md:justify-end md:self-center">

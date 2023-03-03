@@ -2,9 +2,9 @@ import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { shape } from 'prop-types';
-import useCartActions from '../../utils/cartActions';
+import useCartActions from '../../../utils/cartActions';
 
-function ProductCounter({ product }) {
+function CartListItemCounter({ product }) {
   const { cart } = useSelector((state) => state);
   const { handleIncrement, handleDecrement } = useCartActions();
   const itemIndex = cart.findIndex((item) => item.id === product.id);
@@ -38,8 +38,8 @@ function ProductCounter({ product }) {
   );
 }
 
-ProductCounter.propTypes = {
+CartListItemCounter.propTypes = {
   product: shape({}).isRequired,
 };
 
-export default ProductCounter;
+export default CartListItemCounter;
