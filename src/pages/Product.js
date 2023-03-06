@@ -4,6 +4,7 @@ import prettyPrice from '../utils/prettyPrice';
 import PageNotFound from './PageNotFound';
 import ProductCartQuantity from '../components/Shop/ProductCartQuantity';
 import AddToCartButton from '../components/Shop/AddToCartButton';
+import Tabs from '../components/Product/Tabs';
 
 function Product() {
   const { products, cart } = useSelector((state) => state);
@@ -43,6 +44,9 @@ function Product() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="w-full rounded-lg bg-gray-100">
+        <Tabs product={product} />
       </div>
     </div>
   );
