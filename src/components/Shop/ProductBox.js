@@ -12,7 +12,7 @@ function Product({ product }) {
 
   return (
     <Link
-      to={`/product/${product.id}`}
+      to={`/shop/product/${product.id}`}
       className="flex h-auto flex-col rounded-lg border border-gray-200"
     >
       <img src={product.image} alt={product.name} className="mx-auto my-4" />
