@@ -32,7 +32,7 @@ function Tabs({ product }) {
           Details
         </button>
       </div>
-      <div>
+      <div className="rounded-b-lg p-6">
         {activeTab === 'details' ? (
           <Details product={product} />
         ) : (

@@ -1,7 +1,7 @@
 import { string } from 'prop-types';
 
 function Description({ description }) {
-  return <div className="p-6 text-lg">{description}</div>;
+  return <div className="text-lg">{description}</div>;
 }
 
 Description.propTypes = {
