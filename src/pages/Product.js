@@ -46,13 +46,15 @@ function Product() {
             alt={product.name}
             className="h-full min-w-[196px] rounded-xl border sm:w-1/2 sm:max-w-sm"
           />
-          <div>
-            <h2 className="text-2xl font-semibold">{product.name}</h2>
-            <p className="text-xs">Product number: {product.id}</p>
-            <h2 className="text-2xl font-semibold">
+          <div className="flex flex-col gap-6">
+            <div>
+              <h2 className="text-3xl font-semibold">{product.name}</h2>
+              <p className="text-xs">Product number: {product.id}</p>
+            </div>
+            <h2 className="text-3xl font-semibold">
               {prettyPrice(product.price)}
             </h2>
-            <div className="inline-flex items-center rounded-md border py-2 px-4">
+            <div className="flex items-center self-start rounded-md border py-2 px-4 align-bottom">
               <p className="mr-6 font-semibold">In cart:</p>
               <div className="w-36">
                 {isInCart ? (
