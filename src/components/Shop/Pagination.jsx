@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import uniqId from 'uniqid';
+import { v4 as uuidv4 } from 'uuid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import usePagination from '../../utils/usePagination';
@@ -38,14 +38,14 @@ function Pagination() {
       {paginationRange.map((pageNumber) => {
         if (pageNumber === 'dots') {
           return (
-            <p key={uniqId()} className="h-8 w-4 text-center">
+            <p key={uuidv4()} className="h-8 w-4 text-center">
               ...
             </p>
           );
         }
         return (
           <button
-            key={uniqId()}
+            key={uuidv4()}
             type="button"
             className={`h-8 w-8 rounded-full bg-gray-200 ${
               pageNumber === currentPage ? 'bg-gray-500 text-white' : ''
