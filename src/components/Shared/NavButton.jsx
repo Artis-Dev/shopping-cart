@@ -5,7 +5,7 @@ function NavButton({ link, text }) {
   return (
     <Link
       to={link}
-      className="inline-block self-center rounded-lg bg-gray-700 py-4 px-8 text-white"
+      className="inline-block self-center rounded-lg bg-gray-700 px-8 py-4 text-white"
     >
       {text}
     </Link>

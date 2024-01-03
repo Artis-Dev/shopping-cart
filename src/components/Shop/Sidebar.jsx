@@ -28,7 +28,7 @@ function Sidebar() {
       {isMobile ? <SidebarToggle /> : null}
       {(isMobile && showFilter) || !isMobile ? (
         <>
-          <div className="my-4 flex flex-col gap-y-4 gap-x-6 sm:mt-0">
+          <div className="my-4 flex flex-col gap-x-6 gap-y-4 sm:mt-0">
             <div>
               <h3 className="mb-4 text-2xl">Categories</h3>
               <SidebarCategories />
@@ -55,7 +55,7 @@ function Sidebar() {
           </div>
           {activeFilters.length !== 0 ? (
             <button
-              className="rounded-lg bg-gray-200 py-2 px-4"
+              className="rounded-lg bg-gray-200 px-4 py-2"
               type="button"
               onClick={handleFilterReset}
             >

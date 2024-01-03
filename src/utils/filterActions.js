@@ -10,7 +10,7 @@ const useFilterActions = () => {
   const location = useLocation();
   const queryParams = useMemo(
     () => new URLSearchParams(location.search),
-    [location.search]
+    [location.search],
   );
   const { sortProducts } = useSortActions();
 
@@ -73,7 +73,7 @@ const useFilterActions = () => {
       const sortedArray = sortProducts(products, sort.mode);
 
       const filteredArray = sortedArray.filter((product) =>
-        filterFunctions.every((filterFunction) => filterFunction(product))
+        filterFunctions.every((filterFunction) => filterFunction(product)),
       );
 
       // const sortedArray = sortProducts(filteredArray, sort.mode);
@@ -85,7 +85,7 @@ const useFilterActions = () => {
 
       return filteredArray;
     },
-    [dispatch, filter.activeFilters, products, sort.mode, sortProducts]
+    [dispatch, filter.activeFilters, products, sort.mode, sortProducts],
   );
 
   return {

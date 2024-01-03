@@ -10,9 +10,9 @@ function CartList() {
     <>
       <CartListHeader />
       <div>
-        {cart.map((product) => {
-          return <CartListItem key={product.id} product={product} />;
-        })}
+        {cart.map((product) => (
+          <CartListItem key={product.id} product={product} />
+        ))}
       </div>
       <CartListFooter />
     </>

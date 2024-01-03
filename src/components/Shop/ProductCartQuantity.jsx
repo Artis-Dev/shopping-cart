@@ -13,7 +13,8 @@ function ProductCartQuantity({ product }) {
     <div className="flex">
       <button
         type="button"
-        className="rounded-l-lg bg-white py-2 px-4 font-bold text-gray-800"
+        aria-label="Decrease the quantity"
+        className="rounded-l-lg bg-white px-4 py-2 font-bold text-gray-800"
         onClick={(e) => handleDecrement(product, e)}
       >
         <FontAwesomeIcon icon={faMinus} size="xs" />
@@ -23,14 +24,15 @@ function ProductCartQuantity({ product }) {
         name=""
         id=""
         value={cart[productIndex].quantity}
-        className="p2 flex w-full appearance-none rounded-none border-t-2 border-b-2 border-white bg-gray-200 text-center"
+        className="p2 flex w-full appearance-none rounded-none border-b-2 border-t-2 border-white bg-gray-200 text-center"
         readOnly
         style={{ WebkitAppearance: 'textfield' }}
         onClick={(e) => e.preventDefault()}
       />
       <button
         type="button"
-        className="rounded-r-lg bg-white py-2 px-4 font-bold text-gray-800"
+        aria-label="Increase the quantity"
+        className="rounded-r-lg bg-white px-4 py-2 font-bold text-gray-800"
         onClick={(e) => handleIncrement(product, e)}
       >
         <FontAwesomeIcon icon={faPlus} size="xs" />

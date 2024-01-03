@@ -10,7 +10,7 @@ function Layout() {
     <div className="flex min-h-screen flex-col bg-white">
       <Header />
       <div
-        className={`my-0 mx-auto w-full grow bg-white pt-[80px] duration-300
+        className={`mx-auto my-0 w-full grow bg-white pt-[80px] duration-300
         ${showNav && 'brightness-50'}`}
       >
         <Outlet />

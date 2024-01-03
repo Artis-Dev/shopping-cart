@@ -28,6 +28,7 @@ function Pagination() {
     <div className="mt-6 flex justify-center gap-2">
       <button
         type="button"
+        aria-label="Previous page"
         className="disabled:text-gray-500"
         disabled={currentPage === 1 ? true : ''}
         onClick={() => handleChangePage('previous')}
@@ -57,6 +58,7 @@ function Pagination() {
       })}
       <button
         type="button"
+        aria-label="Next page"
         className="disabled:text-gray-500"
         disabled={currentPage === lastPage ? true : ''}
         onClick={() => handleChangePage('next')}

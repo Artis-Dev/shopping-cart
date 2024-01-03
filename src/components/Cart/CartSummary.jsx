@@ -4,9 +4,10 @@ import prettyPrice from '../../utils/prettyPrice';
 function CartSummary() {
   const { cart } = useSelector((state) => state);
 
-  const totalPrice = cart.reduce((total, product) => {
-    return total + product.price * product.quantity;
-  }, 0);
+  const totalPrice = cart.reduce(
+    (total, product) => total + product.price * product.quantity,
+    0,
+  );
 
   const tax = totalPrice * 0.21;
   const subtotal = totalPrice - tax;

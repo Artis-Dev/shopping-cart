@@ -13,7 +13,8 @@ function CartListItemCounter({ product }) {
     <div className="flex text-center">
       <button
         type="button"
-        className="rounded-l-lg bg-gray-200 py-1 px-2 font-bold text-gray-800"
+        aria-label="Decrease the quantity"
+        className="rounded-l-lg bg-gray-200 px-2 py-1 font-bold text-gray-800"
         onClick={(e) => handleDecrement(product, e)}
       >
         <FontAwesomeIcon icon={faMinus} size="xs" />
@@ -23,13 +24,14 @@ function CartListItemCounter({ product }) {
         name=""
         id=""
         value={itemIndex !== -1 ? cart[itemIndex].quantity : 0}
-        className="w-9 appearance-none rounded-none bg-gray-50 py-1 px-1 text-center"
+        className="w-9 appearance-none rounded-none bg-gray-50 px-1 py-1 text-center"
         readOnly
         style={{ WebkitAppearance: 'textfield' }}
       />
       <button
         type="button"
-        className="rounded-r-lg bg-gray-200 py-1 px-2 font-bold text-gray-800"
+        aria-label="Increase the quantity"
+        className="rounded-r-lg bg-gray-200 px-2 py-1 font-bold text-gray-800"
         onClick={(e) => handleIncrement(product, e)}
       >
         <FontAwesomeIcon icon={faPlus} size="xs" />

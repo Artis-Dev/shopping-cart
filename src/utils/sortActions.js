@@ -9,7 +9,7 @@ const useSortActions = () => {
   const location = useLocation();
   const queryParams = useMemo(
     () => new URLSearchParams(location.search),
-    [location.search]
+    [location.search],
   );
 
   const handleChangeSort = (event) => {

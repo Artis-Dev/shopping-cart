@@ -18,7 +18,7 @@ function ProductListInfo() {
     lastProductIndex = firstProductIndex + sort.pageSize - 1;
     lastProductIndex = Math.min(
       firstProductIndex + sort.pageSize - 1,
-      filteredProducts.length
+      filteredProducts.length,
     );
   }
   return (

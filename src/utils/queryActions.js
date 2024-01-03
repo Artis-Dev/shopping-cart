@@ -8,7 +8,7 @@ const useQueryActions = () => {
   const location = useLocation();
   const queryParams = useMemo(
     () => new URLSearchParams(location.search),
-    [location.search]
+    [location.search],
   );
 
   const handleReset = () => {

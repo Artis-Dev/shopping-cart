@@ -9,7 +9,7 @@ function CartListItemRemove({ product }) {
   return (
     <button
       type="button"
-      className="rounded-lg bg-red-200 py-1 px-2 align-middle text-xs"
+      className="rounded-lg bg-red-200 px-2 py-1 align-middle text-xs"
       onClick={() => handleRemove(product)}
     >
       <FontAwesomeIcon icon={faRemove} /> REMOVE

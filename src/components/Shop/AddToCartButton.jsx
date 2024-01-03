@@ -7,7 +7,7 @@ function AddToCartButton({ product }) {
   return (
     <button
       type="button"
-      className="w-full rounded-lg bg-white py-2 px-4"
+      className="w-full rounded-lg bg-white px-4 py-2"
       onClick={(e) => handleAddToCart(product, e)}
     >
       Add to cart

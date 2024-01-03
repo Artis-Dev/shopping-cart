@@ -14,28 +14,26 @@ function SidebarCategories() {
         onClick={handleReset}
         className={({ isActive }) =>
           isActive
-            ? 'rounded-lg bg-gray-300 py-2 px-4'
-            : 'rounded-lg bg-gray-200 py-2 px-4'
+            ? 'rounded-lg bg-gray-300 px-4 py-2'
+            : 'rounded-lg bg-gray-200 px-4 py-2'
         }
       >
         All products
       </NavLink>
-      {categories.map((category) => {
-        return (
-          <NavLink
-            key={category}
-            to={`/shop/${category}`}
-            className={({ isActive }) =>
-              isActive
-                ? 'rounded-lg bg-gray-300 py-2 px-4 sm:pl-8'
-                : 'rounded-lg bg-gray-200 py-2 px-4 sm:pl-8'
-            }
-            onClick={handleReset}
-          >
-            {category.charAt(0).toUpperCase() + category.slice(1)}
-          </NavLink>
-        );
-      })}
+      {categories.map((category) => (
+        <NavLink
+          key={category}
+          to={`/shop/${category}`}
+          className={({ isActive }) =>
+            isActive
+              ? 'rounded-lg bg-gray-300 px-4 py-2 sm:pl-8'
+              : 'rounded-lg bg-gray-200 px-4 py-2 sm:pl-8'
+          }
+          onClick={handleReset}
+        >
+          {category.charAt(0).toUpperCase() + category.slice(1)}
+        </NavLink>
+      ))}
     </div>
   );
 }

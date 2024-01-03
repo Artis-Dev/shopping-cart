@@ -19,9 +19,9 @@ function ProductList() {
     <div className="grid grid-cols-[repeat(2,minmax(150px,1fr))] gap-3 sm:grid-cols-[repeat(auto-fit,minmax(278px,1fr))] sm:gap-6">
       {filter.filteredProducts.length > 0 ? (
         <>
-          {currentFilteredProducts.map((product) => {
-            return <ProductBox key={product.id} product={product} />;
-          })}
+          {currentFilteredProducts.map((product) => (
+            <ProductBox key={product.id} product={product} />
+          ))}
         </>
       ) : (
         <ProductListNotFound />

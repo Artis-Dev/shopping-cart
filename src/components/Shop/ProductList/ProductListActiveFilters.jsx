@@ -12,23 +12,22 @@ function ProductListActiveFilters() {
       {activeFilters.length > 0 && (
         <div className="flex flex-wrap items-center gap-2">
           <span>Filters:</span>
-          {activeFilters.map((activeFilter) => {
-            return (
-              <span
-                key={activeFilter}
-                className="rounded-lg bg-gray-200 py-1 px-2"
+          {activeFilters.map((activeFilter) => (
+            <span
+              key={activeFilter}
+              className="rounded-lg bg-gray-200 px-2 py-1"
+            >
+              <span>{activeFilter}</span>
+              <button
+                type="button"
+                aria-label="Remove filter"
+                onClick={() => handleFilterRemove(activeFilter)}
+                className="ml-1 inline-flex h-3 w-3"
               >
-                <span>{activeFilter}</span>
-                <button
-                  type="button"
-                  onClick={() => handleFilterRemove(activeFilter)}
-                  className="ml-1 inline-flex h-3 w-3"
-                >
-                  <FontAwesomeIcon icon={faRemove} size="xs" />
-                </button>
-              </span>
-            );
-          })}
+                <FontAwesomeIcon icon={faRemove} size="xs" />
+              </button>
+            </span>
+          ))}
         </div>
       )}
     </div>

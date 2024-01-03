@@ -18,7 +18,7 @@ const calculatePaginationRange = (totalPageCount, currentPage) => {
   const leftSiblingIndex = Math.max(currentPage - siblingCount, 1);
   const rightSiblingIndex = Math.min(
     currentPage + siblingCount,
-    totalPageCount
+    totalPageCount,
   );
 
   const shouldShowLeftDots = leftSiblingIndex > 2;
@@ -38,7 +38,7 @@ const calculatePaginationRange = (totalPageCount, currentPage) => {
     const rightItemCount = 4 * siblingCount;
     const rightRange = range(
       totalPageCount - rightItemCount + 1,
-      totalPageCount
+      totalPageCount,
     );
     return [firstPageIndex, dots, ...rightRange];
   }
@@ -56,7 +56,7 @@ const usePagination = ({ totalCount, pageSize, currentPage }) => {
 
   const paginationRange = useMemo(
     () => calculatePaginationRange(totalPageCount, currentPage),
-    [totalPageCount, currentPage]
+    [totalPageCount, currentPage],
   );
 
   return paginationRange;

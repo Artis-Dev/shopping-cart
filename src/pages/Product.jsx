@@ -33,7 +33,7 @@ function Product() {
       <div className="w-full rounded-lg bg-gray-100 p-6">
         <button
           className="mb-6 rounded-md
-           bg-white py-2 px-4"
+           bg-white px-4 py-2"
           type="button"
           onClick={() => handleNavigateBack()}
         >
@@ -54,7 +54,7 @@ function Product() {
             <h2 className="text-3xl font-semibold">
               {prettyPrice(product.price)}
             </h2>
-            <div className="flex items-center self-start rounded-md border py-2 px-4 align-bottom">
+            <div className="flex items-center self-start rounded-md border px-4 py-2 align-bottom">
               <p className="mr-6 font-semibold">In cart:</p>
               <div className="w-36">
                 {isInCart ? (

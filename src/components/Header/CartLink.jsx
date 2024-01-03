@@ -6,9 +6,10 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 function CartLink() {
   const { cart } = useSelector((state) => state);
 
-  const totalProducts = cart.reduce((total, product) => {
-    return total + product.quantity;
-  }, 0);
+  const totalProducts = cart.reduce(
+    (total, product) => total + product.quantity,
+    0,
+  );
 
   return (
     <div className="flex h-8 w-8 items-center justify-center">
@@ -25,7 +26,7 @@ function CartLink() {
         >
           <FontAwesomeIcon icon={faShoppingCart} />
           {totalProducts > 0 && (
-            <span className="fa-layers-counter translate-x-1/4 -translate-y-1/4 scale-50 border-4 border-gray-100 bg-gray-700">
+            <span className="fa-layers-counter -translate-y-1/4 translate-x-1/4 scale-50 border-4 border-gray-100 bg-gray-700">
               {totalProducts}
             </span>
           )}

@@ -51,7 +51,7 @@ const router = createBrowserRouter(
   ],
   {
     basename: '/shopping-cart',
-  }
+  },
 );
 
 export default router;

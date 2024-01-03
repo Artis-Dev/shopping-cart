@@ -27,7 +27,7 @@ const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case 'CART_ADD':
       itemIndex = state.cart.findIndex(
-        (cartItem) => cartItem.id === action.item.id
+        (cartItem) => cartItem.id === action.item.id,
       );
       if (itemIndex !== -1) {
         return {
@@ -48,9 +48,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'CART_REMOVE':
       return {
         ...state,
-        cart: state.cart.filter((item) => {
-          return item.id !== action.item.id;
-        }),
+        cart: state.cart.filter((item) => item.id !== action.item.id),
       };
 
     case 'CART_INCREMENT':
@@ -147,7 +145,7 @@ const reducer = (state = initialState, action = {}) => {
         filter: {
           ...state.filter,
           activeFilters: state.filter.activeFilters.filter(
-            (category) => category !== action.item
+            (category) => category !== action.item,
           ),
         },
         sort: {
