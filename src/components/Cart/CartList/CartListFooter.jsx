@@ -1,13 +1,8 @@
-import { useSelector } from 'react-redux';
 import prettyPrice from '../../../utils/prettyPrice';
+import useTotalPrice from '../../../utils/useTotalPrice';
 
 function CartListFooter() {
-  const { cart } = useSelector((state) => state);
-
-  const totalPrice = cart.reduce(
-    (total, product) => total + product.price * product.quantity,
-    0,
-  );
+  const totalPrice = useTotalPrice();
 
   return (
     <div className="mt-3 flex border-t pt-3 ">
