@@ -27,6 +27,7 @@ function Product() {
   }
 
   const isInCart = cart.find((item) => item.id === product.id);
+  const price = prettyPrice(product.price);
 
   return (
     <div className="m-auto flex max-w-screen-xl flex-col gap-6 p-6 sm:p-12">
@@ -51,9 +52,7 @@ function Product() {
               <h2 className="text-3xl font-semibold">{product.name}</h2>
               <p className="text-xs">Product number: {product.id}</p>
             </div>
-            <h2 className="text-3xl font-semibold">
-              {prettyPrice(product.price)}
-            </h2>
+            <h2 className="text-3xl font-semibold">{price}</h2>
             <div className="flex items-center self-start rounded-md border px-4 py-2 align-bottom">
               <p className="mr-6 font-semibold">In cart:</p>
               <div className="w-36">

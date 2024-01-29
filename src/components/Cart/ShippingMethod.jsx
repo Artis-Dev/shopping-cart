@@ -7,6 +7,8 @@ function ShippingMethod({ method, disabled, totalPrice }) {
   const { selected } = useSelector((state) => state.shipping);
   const { handleShippingMethod } = useCartActions();
 
+  const shippingPrice = prettyPrice(method.price);
+
   return (
     <label htmlFor={method.value}>
       <div className="flex justify-between gap-2">
@@ -28,7 +30,7 @@ function ShippingMethod({ method, disabled, totalPrice }) {
             </span>
           )}
         </div>
-        <span className="min-w-14 text-right">{prettyPrice(method.price)}</span>
+        <span className="min-w-14 text-right">{shippingPrice}</span>
       </div>
     </label>
   );

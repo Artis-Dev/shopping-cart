@@ -6,16 +6,16 @@ function CartSummary() {
   const shipping = useSelector((state) => state.shipping);
 
   const totalPrice = useTotalPrice();
-  const tax = totalPrice * 0.21;
-  const subtotal = totalPrice - tax;
+  const tax = prettyPrice(totalPrice * 0.21);
+  const subtotal = prettyPrice(totalPrice - tax);
   let shippingPrice = shipping.selected.price;
   let orderTotal;
 
   if (typeof shipping.selected.price === 'number') {
-    orderTotal = totalPrice + shippingPrice;
+    orderTotal = prettyPrice(totalPrice + shippingPrice);
     shippingPrice = prettyPrice(shippingPrice);
   } else {
-    orderTotal = totalPrice;
+    orderTotal = prettyPrice(totalPrice);
     shippingPrice = 'Select shipping method';
   }
 
@@ -25,11 +25,11 @@ function CartSummary() {
       <div className="flex flex-col gap-2">
         <div className="flex justify-between gap-2">
           <p>Subtotal:</p>
-          <p className="min-w-14 text-right">{prettyPrice(subtotal)}</p>
+          <p className="min-w-14 text-right">{subtotal}</p>
         </div>
         <div className="flex justify-between gap-2">
           <p>Tax (21%):</p>
-          <p className="min-w-14 text-right">{prettyPrice(tax)}</p>
+          <p className="min-w-14 text-right">{tax}</p>
         </div>
         <div className="flex justify-between gap-2">
           <p>Shipping:</p>
@@ -38,7 +38,7 @@ function CartSummary() {
         <div className="border-b" />
         <div className="flex  justify-between gap-2">
           <p>Order total:</p>
-          <p className="min-w-14 text-right">{prettyPrice(orderTotal)}</p>
+          <p className="min-w-14 text-right">{orderTotal}</p>
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@ function Product({ product }) {
   const { cart } = useSelector((state) => state);
 
   const isInCart = cart.find((item) => item.id === product.id);
-
+  const price = prettyPrice(product.price);
   return (
     <Link
       to={`/shop/product/${product.id}`}
@@ -18,7 +18,7 @@ function Product({ product }) {
       <img src={product.image} alt={product.name} className="mx-auto my-4" />
       <div className="flex grow flex-col rounded-b-lg bg-gray-200 p-3">
         <h3 className="mb-1  grow text-xl">{product.name}</h3>
-        <h4 className="mb-2 text-lg">{prettyPrice(product.price)}</h4>
+        <h4 className="mb-2 text-lg">{price}</h4>
         {isInCart ? (
           <ProductCartQuantity product={product} />
         ) : (
