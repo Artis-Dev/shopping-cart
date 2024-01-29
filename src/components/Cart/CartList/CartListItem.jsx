@@ -7,9 +7,13 @@ import CartListItemRemove from './CartListItemRemove';
 function CartListItem({ product }) {
   return (
     <div className="mb-3 flex gap-2 border-b pb-3 last:mb-0 last:border-0 last:pb-0">
-      <div className="h-32 w-24 shrink-0 sm:w-32">
+      <div className="shrink-0">
         <Link to={`/shop/product/${product.id}`}>
-          <img className="-ml-4 w-32 max-w-none" src={product.image} alt="" />
+          <img
+            className="w-32 rounded-lg border"
+            src={product.image}
+            alt={product.name}
+          />
         </Link>
       </div>
       <div className="flex grow flex-col gap-2 md:flex-row">
