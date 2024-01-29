@@ -1,39 +1,44 @@
 import { useSelector } from 'react-redux';
 import prettyPrice from '../../utils/prettyPrice';
+import useTotalPrice from '../../utils/useTotalPrice';
 
 function CartSummary() {
-  const { cart } = useSelector((state) => state);
+  const shipping = useSelector((state) => state.shipping);
 
-  const totalPrice = cart.reduce(
-    (total, product) => total + product.price * product.quantity,
-    0,
-  );
-
+  const totalPrice = useTotalPrice();
   const tax = totalPrice * 0.21;
   const subtotal = totalPrice - tax;
-  const shipping = 8;
-  const orderTotal = totalPrice + shipping;
+  let shippingPrice = shipping.selected.price;
+  let orderTotal;
+
+  if (typeof shipping.selected.price === 'number') {
+    orderTotal = totalPrice + shippingPrice;
+    shippingPrice = prettyPrice(shippingPrice);
+  } else {
+    orderTotal = totalPrice;
+    shippingPrice = 'Select shipping method';
+  }
 
   return (
     <div>
       <p className="mb-4 text-2xl font-semibold">Summary</p>
       <div className="flex flex-col gap-2">
-        <div className="flex justify-between">
-          <p className="">Subtotal:</p>
-          <p className="">{prettyPrice(subtotal)}</p>
+        <div className="flex justify-between gap-2">
+          <p>Subtotal:</p>
+          <p className="min-w-14 text-right">{prettyPrice(subtotal)}</p>
         </div>
-        <div className="flex justify-between">
-          <p className="">Tax (21%):</p>
-          <p className="">{prettyPrice(tax)}</p>
+        <div className="flex justify-between gap-2">
+          <p>Tax (21%):</p>
+          <p className="min-w-14 text-right">{prettyPrice(tax)}</p>
         </div>
-        <div className="flex justify-between">
-          <p className="">Shipping:</p>
-          <p className="">{prettyPrice(shipping)}</p>
+        <div className="flex justify-between gap-2">
+          <p>Shipping:</p>
+          <p className="min-w-14 text-right">{shippingPrice}</p>
         </div>
-        <div className="border" />
-        <div className="flex justify-between">
-          <p className="">Order total:</p>
-          <p className="">{prettyPrice(orderTotal)}</p>
+        <div className="border-b" />
+        <div className="flex  justify-between gap-2">
+          <p>Order total:</p>
+          <p className="min-w-14 text-right">{prettyPrice(orderTotal)}</p>
         </div>
       </div>
     </div>

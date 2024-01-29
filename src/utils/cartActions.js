@@ -22,11 +22,21 @@ const useCartActions = () => {
     dispatch({ type: 'CART_DECREMENT', item });
   };
 
+  const handleShippingMethod = (item) => {
+    dispatch({ type: 'SHIPPING_CHANGE_METHOD', item });
+  };
+
+  const handleUncheckShippingMethod = () => {
+    dispatch({ type: 'SHIPPING_UNCHECK_METHOD' });
+  };
+
   return {
     handleAddToCart,
     handleRemove,
     handleIncrement,
     handleDecrement,
+    handleShippingMethod,
+    handleUncheckShippingMethod,
   };
 };
 

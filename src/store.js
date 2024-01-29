@@ -20,6 +20,15 @@ const initialState = {
     currentPage: 1,
     pageSize: PAGE_SIZE_INITIAL_VALUE,
   },
+  shipping: {
+    selected: {},
+    shippingMethods: {
+      free: { title: 'Free shipping', price: 0.0, value: 'free' },
+      local: { title: 'Local pickup', price: 0.0, value: 'local' },
+      parcel: { title: 'Parcel', price: 3.5, value: 'parcel' },
+      courier: { title: 'Courier', price: 5.0, value: 'courier' },
+    },
+  },
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -238,6 +247,24 @@ const reducer = (state = initialState, action = {}) => {
         sort: {
           ...state.sort,
           currentPage: state.sort.currentPage - 1,
+        },
+      };
+
+    case 'SHIPPING_CHANGE_METHOD':
+      return {
+        ...state,
+        shipping: {
+          ...state.shipping,
+          selected: action.item,
+        },
+      };
+
+    case 'SHIPPING_UNCHECK_METHOD':
+      return {
+        ...state,
+        shipping: {
+          ...state.shipping,
+          selected: {},
         },
       };
 
