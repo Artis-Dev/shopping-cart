@@ -9,7 +9,8 @@ import AddToCartButton from '../components/Shop/AddToCartButton';
 import Tabs from '../components/Product/Tabs';
 
 function Product() {
-  const { products, cart } = useSelector((state) => state);
+  const products = useSelector((state) => state.products);
+  const cart = useSelector((state) => state.cart);
   const { productId } = useParams();
   const product = products.find((item) => item.id === productId);
   const navigate = useNavigate();

@@ -5,7 +5,7 @@ import CartShipping from '../components/Cart/CartShipping';
 import CartSummary from '../components/Cart/CartSummary';
 
 function Cart() {
-  const { cart } = useSelector((state) => state);
+  const cart = useSelector((state) => state.cart);
 
   return (
     <div className="m-auto flex max-w-screen-xl flex-col gap-6 p-6 sm:p-12">

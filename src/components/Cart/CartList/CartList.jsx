@@ -4,7 +4,7 @@ import CartListHeader from './CartListHeader';
 import CartListItem from './CartListItem';
 
 function CartList() {
-  const { cart } = useSelector((state) => state);
+  const cart = useSelector((state) => state.cart);
 
   return (
     <>

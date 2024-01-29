@@ -5,7 +5,7 @@ import { shape } from 'prop-types';
 import useCartActions from '../../../utils/cartActions';
 
 function CartListItemCounter({ product }) {
-  const { cart } = useSelector((state) => state);
+  const cart = useSelector((state) => state.cart);
   const { handleIncrement, handleDecrement } = useCartActions();
   const itemIndex = cart.findIndex((item) => item.id === product.id);
 

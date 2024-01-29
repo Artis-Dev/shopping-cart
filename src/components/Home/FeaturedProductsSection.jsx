@@ -4,7 +4,7 @@ import useMediaQuery from '../../utils/useMediaQuery';
 import ProductBox from '../Shop/ProductBox';
 
 function FeaturedProductsSection() {
-  const { products } = useSelector((state) => state);
+  const products = useSelector((state) => state.products);
   const big = useMediaQuery('(max-width: 1279px)');
   const small = useMediaQuery('(max-width: 977px)');
 

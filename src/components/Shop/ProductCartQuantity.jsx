@@ -5,7 +5,7 @@ import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import useCartActions from '../../utils/cartActions';
 
 function ProductCartQuantity({ product }) {
-  const { cart } = useSelector((state) => state);
+  const cart = useSelector((state) => state.cart);
   const { handleIncrement, handleDecrement } = useCartActions();
   const productIndex = cart.findIndex((item) => item.id === product.id);
 

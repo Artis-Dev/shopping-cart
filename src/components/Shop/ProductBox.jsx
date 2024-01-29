@@ -6,10 +6,11 @@ import AddToCartButton from './AddToCartButton';
 import ProductCartQuantity from './ProductCartQuantity';
 
 function Product({ product }) {
-  const { cart } = useSelector((state) => state);
+  const cart = useSelector((state) => state.cart);
 
   const isInCart = cart.find((item) => item.id === product.id);
   const price = prettyPrice(product.price);
+
   return (
     <Link
       to={`/shop/product/${product.id}`}

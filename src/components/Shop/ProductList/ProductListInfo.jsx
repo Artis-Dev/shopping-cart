@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
 
 function ProductListInfo() {
-  const { filter, sort } = useSelector((state) => state);
+  const filter = useSelector((state) => state.filter);
+  const sort = useSelector((state) => state.sort);
   const { filteredProducts } = filter;
 
   let firstProductIndex;

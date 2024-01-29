@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 const useSortActions = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { sort } = useSelector((state) => state);
+  const sort = useSelector((state) => state.sort);
   const location = useLocation();
   const queryParams = useMemo(
     () => new URLSearchParams(location.search),

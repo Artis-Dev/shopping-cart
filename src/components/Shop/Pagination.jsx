@@ -7,8 +7,8 @@ import useSortActions from '../../utils/sortActions';
 
 function Pagination() {
   const { handleChangePage } = useSortActions();
-  const { filter, sort } = useSelector((state) => state);
-
+  const filter = useSelector((state) => state.filter);
+  const sort = useSelector((state) => state.sort);
   const totalCount = filter.filteredProducts.length;
   const { currentPage, pageSize } = sort;
 

@@ -4,8 +4,8 @@ import ProductBox from '../ProductBox';
 import ProductListNotFound from './ProductListNotFound';
 
 function ProductList() {
-  const { filter, sort } = useSelector((state) => state);
-
+  const filter = useSelector((state) => state.filter);
+  const sort = useSelector((state) => state.sort);
   const currentFilteredProducts = useMemo(() => {
     if (sort.pageSize === 'all') {
       return filter.filteredProducts;

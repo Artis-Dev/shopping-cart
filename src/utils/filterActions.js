@@ -6,7 +6,9 @@ import useSortActions from './sortActions';
 const useFilterActions = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { products, filter, sort } = useSelector((state) => state);
+  const products = useSelector((state) => state.products);
+  const filter = useSelector((state) => state.filter);
+  const sort = useSelector((state) => state.sort);
   const location = useLocation();
   const queryParams = useMemo(
     () => new URLSearchParams(location.search),

@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import useSortActions from '../../../utils/sortActions';
 
 function ProductListSettings() {
-  const { sort } = useSelector((state) => state);
+  const sort = useSelector((state) => state.sort);
 
   const { handleChangeSort, handleChangeProductCount } = useSortActions();
 

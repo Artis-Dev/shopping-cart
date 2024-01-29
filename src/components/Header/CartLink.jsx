@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 function CartLink() {
-  const { cart } = useSelector((state) => state);
+  const cart = useSelector((state) => state.cart);
 
   const totalProducts = cart.reduce(
     (total, product) => total + product.quantity,
