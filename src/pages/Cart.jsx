@@ -18,11 +18,11 @@ function Cart() {
           <div className="w-full rounded-lg bg-gray-100 p-6">
             <CartList />
           </div>
-          <div className="flex gap-6">
-            <div className="w-1/2 rounded-lg bg-gray-100 p-6">
+          <div className="flex flex-col gap-6 sm:flex-row">
+            <div className="w-full rounded-lg bg-gray-100 p-6 sm:w-1/2">
               <CartShipping />
             </div>
-            <div className="w-1/2 rounded-lg bg-gray-100 p-6">
+            <div className="w-full rounded-lg bg-gray-100 p-6 sm:w-1/2">
               <CartSummary />
             </div>
           </div>
