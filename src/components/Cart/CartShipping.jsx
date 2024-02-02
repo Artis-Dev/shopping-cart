@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, Fragment } from 'react';
 import { useSelector } from 'react-redux';
 import ShippingMethod from './ShippingMethod';
 import useTotalPrice from '../../utils/useTotalPrice';
@@ -10,29 +10,25 @@ function CartShipping() {
   const totalPrice = useTotalPrice();
 
   useEffect(() => {
-    if (
-      JSON.stringify(selected) === JSON.stringify(shippingMethods.free) &&
-      totalPrice < 50
-    ) {
+    if (selected.id === 'free' && totalPrice < 50) {
       handleUncheckShippingMethod();
     }
-  }, [handleUncheckShippingMethod, selected, shippingMethods.free, totalPrice]);
+  }, [handleUncheckShippingMethod, selected.id, totalPrice]);
 
   return (
     <div>
       <p className="mb-4 text-2xl font-semibold">Shipping</p>
       <div className="flex flex-col gap-2">
-        <ShippingMethod
-          method={shippingMethods.free}
-          disabled={totalPrice < 50}
-          totalPrice={totalPrice}
-        />
-        <div className="border-b" />
-        <ShippingMethod method={shippingMethods.local} />
-        <div className="border-b" />
-        <ShippingMethod method={shippingMethods.parcel} />
-        <div className="border-b" />
-        <ShippingMethod method={shippingMethods.courier} />
+        {shippingMethods.map((method, index) => (
+          <Fragment key={method.id}>
+            <ShippingMethod
+              method={method}
+              disabled={method.id === 'free' && totalPrice < 50}
+              totalPrice={totalPrice}
+            />
+            {index < shippingMethods.length - 1 && <div className="border-b" />}
+          </Fragment>
+        ))}
       </div>
     </div>
   );

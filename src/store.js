@@ -22,12 +22,12 @@ const initialState = {
   },
   shipping: {
     selected: {},
-    shippingMethods: {
-      free: { title: 'Free shipping', price: 0.0, value: 'free' },
-      local: { title: 'Local pickup', price: 0.0, value: 'local' },
-      parcel: { title: 'Parcel', price: 3.5, value: 'parcel' },
-      courier: { title: 'Courier', price: 5.0, value: 'courier' },
-    },
+    shippingMethods: [
+      { id: 'free', title: 'Free shipping', price: 0.0 },
+      { id: 'local', title: 'Local pickup', price: 0.0 },
+      { id: 'parcel', title: 'Parcel', price: 3.5 },
+      { id: 'courier', title: 'Courier', price: 5.0 },
+    ],
   },
 };
 
