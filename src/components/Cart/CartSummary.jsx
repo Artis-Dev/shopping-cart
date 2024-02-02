@@ -6,7 +6,8 @@ function CartSummary() {
   const shipping = useSelector((state) => state.shipping);
 
   const totalPrice = useTotalPrice();
-  const tax = prettyPrice(totalPrice * 0.21);
+  const tax = totalPrice * 0.21;
+  const prettyTax = prettyPrice(totalPrice * 0.21);
   const subtotal = prettyPrice(totalPrice - tax);
   let shippingPrice = shipping.selected.price;
   let orderTotal;
@@ -29,7 +30,7 @@ function CartSummary() {
         </div>
         <div className="flex justify-between gap-2">
           <p>Tax (21%):</p>
-          <p className="min-w-14 text-right">{tax}</p>
+          <p className="min-w-14 text-right">{prettyTax}</p>
         </div>
         <div className="flex justify-between gap-2">
           <p>Shipping:</p>
