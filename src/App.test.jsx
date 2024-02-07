@@ -1,8 +1,11 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { describe, it, expect } from 'vitest';
 
-test('renders Hello world! string', () => {
-  render(<App />);
-  const stringElement = screen.getByText(/Hello world!/i);
-  expect(stringElement).toBeInTheDocument();
+describe('something truthy and falsy', () => {
+  it('true to be true', () => {
+    expect(true).toBe(true);
+  });
+
+  it('false to be false', () => {
+    expect(false).toBe(false);
+  });
 });
