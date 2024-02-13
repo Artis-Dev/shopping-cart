@@ -36,7 +36,7 @@ function Tabs({ product }) {
         {activeTab === 'details' ? (
           <Details product={product} />
         ) : (
-          <Description />
+          <Description description={product.description} />
         )}
       </div>
     </>

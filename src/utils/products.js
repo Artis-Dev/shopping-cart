@@ -39,6 +39,8 @@ const products = [
   {
     id: '60462',
     name: 'Batman (Battle Damaged) - The Batman',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 18.0,
     image: img60462,
     category: 'movies',
@@ -48,6 +50,8 @@ const products = [
   {
     id: '54296',
     name: 'Scorpion (Action Pose) (Metallic) - Mortal Kombat',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 18.0,
     image: img54296,
     category: 'movies',
@@ -57,6 +61,8 @@ const products = [
   {
     id: '67606',
     name: 'Spider-Man - Spider-Man: No Way Home',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img67606,
     category: 'movies',
@@ -66,6 +72,8 @@ const products = [
   {
     id: '48891',
     name: 'Carnage (Carla Unger) - Venom',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 18.0,
     image: img48891,
     category: 'movies',
@@ -75,6 +83,8 @@ const products = [
   {
     id: '48063',
     name: 'Harry Potter With Invisibility Cloak - Harry Potter',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img48063,
     category: 'movies',
@@ -84,6 +94,8 @@ const products = [
   {
     id: '65653',
     name: 'Hermione (Chamber of Secrets) - Harry Potter',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img65653,
     category: 'movies',
@@ -93,6 +105,8 @@ const products = [
   {
     id: '65650',
     name: 'Dobby (Chamber of Secrets) - Harry Potter',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img65650,
     category: 'movies',
@@ -102,6 +116,8 @@ const products = [
   {
     id: '65641',
     name: 'Jake Sully - Avatar',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img65641,
     category: 'movies',
@@ -111,6 +127,8 @@ const products = [
   {
     id: '65643',
     name: 'Battle Neytiri - Avatar',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img65643,
     category: 'movies',
@@ -120,6 +138,8 @@ const products = [
   {
     id: '59254',
     name: 'Trinity - Matrix (2021)',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img59254,
     category: 'movies',
@@ -129,6 +149,8 @@ const products = [
   {
     id: '60279',
     name: 'Morpheus (Pink Suit) - Matrix (2021)',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 18.0,
     image: img60279,
     category: 'movies',
@@ -138,6 +160,8 @@ const products = [
   {
     id: '63984',
     name: 'Hannibal - The Silence of the Lambs',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img63984,
     category: 'movies',
@@ -147,6 +171,8 @@ const products = [
   {
     id: '59621',
     name: 'Donald Duck - Disney Mickey and Friends',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img59621,
     category: 'television',
@@ -156,6 +182,8 @@ const products = [
   {
     id: '59623',
     name: 'Minnie Mouse - Disney Mickey and Friends',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img59623,
     category: 'television',
@@ -165,6 +193,8 @@ const products = [
   {
     id: '68620',
     name: 'Minnie Mouse (Facet) - Disney 100th',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 18.0,
     image: img68620,
     category: 'television',
@@ -174,6 +204,8 @@ const products = [
   {
     id: '57813',
     name: 'Ciri - The Witcher (Netflix)',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img57813,
     category: 'television',
@@ -183,6 +215,8 @@ const products = [
   {
     id: '57814',
     name: 'Geralt - The Witcher (Netflix)',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img57814,
     category: 'television',
@@ -192,6 +226,8 @@ const products = [
   {
     id: '57815',
     name: 'Yennefer - The Witcher (Netflix)',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img57815,
     category: 'television',
@@ -201,6 +237,8 @@ const products = [
   {
     id: '58846',
     name: 'Jaskier (Green Outfit) - The Witcher (Netflix)',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 18.0,
     image: img58846,
     category: 'television',
@@ -210,6 +248,8 @@ const products = [
   {
     id: '57641',
     name: 'Haise Sasaki - Tokyo Ghoul:re',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img57641,
     category: 'television',
@@ -219,6 +259,8 @@ const products = [
   {
     id: '57643',
     name: 'Saiko Yonebayashi - Tokyo Ghoul:re',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img57643,
     category: 'television',
@@ -228,6 +270,8 @@ const products = [
   {
     id: '54463',
     name: 'Bonekichi - One Piece',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img54463,
     category: 'television',
@@ -237,6 +281,8 @@ const products = [
   {
     id: '46627',
     name: 'Gaara - Naruto',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img46627,
     category: 'television',
@@ -246,6 +292,8 @@ const products = [
   {
     id: '68854',
     name: 'Tsunade (Creation Rebirth) - Naruto Shippuden',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 18.0,
     image: img68854,
     category: 'television',
@@ -255,6 +303,8 @@ const products = [
   {
     id: '59331',
     name: "Tiny Tina - Tiny Tina's Wonderlands",
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img59331,
     category: 'games',
@@ -264,6 +314,8 @@ const products = [
   {
     id: '59333',
     name: "Dragon Lord - Tiny Tina's Wonderlands",
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img59333,
     category: 'games',
@@ -273,6 +325,8 @@ const products = [
   {
     id: '61416',
     name: "Devil's Throne - Cuphead",
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 35.0,
     image: img61416,
     category: 'games',
@@ -282,6 +336,8 @@ const products = [
   {
     id: '61417',
     name: 'Aeroplane Ms. Chalice - Cuphead',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img61417,
     category: 'games',
@@ -291,6 +347,8 @@ const products = [
   {
     id: '65419',
     name: 'Aether - Genshin Impact',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img65419,
     category: 'games',
@@ -300,6 +358,8 @@ const products = [
   {
     id: '65422',
     name: 'Paimon - Genshin Impact',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img65422,
     category: 'games',
@@ -309,6 +369,8 @@ const products = [
   {
     id: '55922',
     name: 'Squirtle (Diamond Collection) - Pokémon',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 22.0,
     image: img55922,
     category: 'games',
@@ -318,6 +380,8 @@ const products = [
   {
     id: '64636',
     name: 'Eevee (Flocked) - Pokémon',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 18.0,
     image: img64636,
     category: 'games',
@@ -327,6 +391,8 @@ const products = [
   {
     id: '65041',
     name: 'Cubone - Pokémon',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img65041,
     category: 'games',
@@ -336,6 +402,8 @@ const products = [
   {
     id: '65042',
     name: 'Flareon - Pokémon',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img65042,
     category: 'games',
@@ -345,6 +413,8 @@ const products = [
   {
     id: '65043',
     name: 'Pikachu (Grumpy) - Pokémon',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img65043,
     category: 'games',
@@ -354,6 +424,8 @@ const products = [
   {
     id: '64231',
     name: "Tie-Dye Foxy - Five Nights at Freddy's",
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
     price: 16.0,
     image: img64231,
     category: 'games',

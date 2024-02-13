@@ -9,8 +9,7 @@ Description.propTypes = {
 };
 
 Description.defaultProps = {
-  description:
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae exercitationem dignissimos sapiente eius tempore placeat aperiam tenetur est perferendis reprehenderit maiores, ab vero debitis numquam a soluta. Distinctio, vero eum!',
+  description: 'This product has no description.',
 };
 
 export default Description;
