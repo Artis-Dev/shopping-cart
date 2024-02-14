@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { shape } from 'prop-types';
+import { number, shape, string } from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import useCartActions from '../../utils/cartActions';
@@ -42,7 +42,13 @@ function ProductCartQuantity({ product }) {
 }
 
 ProductCartQuantity.propTypes = {
-  product: shape({}).isRequired,
+  product: shape({
+    id: string,
+    name: string,
+    image: string,
+    price: number,
+    quantity: number,
+  }).isRequired,
 };
 
 export default ProductCartQuantity;

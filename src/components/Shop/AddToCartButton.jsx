@@ -1,4 +1,4 @@
-import { shape } from 'prop-types';
+import { number, shape, string } from 'prop-types';
 import useCartActions from '../../utils/cartActions';
 
 function AddToCartButton({ product }) {
@@ -16,7 +16,13 @@ function AddToCartButton({ product }) {
 }
 
 AddToCartButton.propTypes = {
-  product: shape({}).isRequired,
+  product: shape({
+    id: string,
+    name: string,
+    image: string,
+    price: number,
+    quantity: number,
+  }).isRequired,
 };
 
 export default AddToCartButton;

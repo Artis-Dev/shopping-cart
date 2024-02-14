@@ -1,4 +1,4 @@
-import { shape } from 'prop-types';
+import { number, shape, string } from 'prop-types';
 import { useState } from 'react';
 import Description from './Description';
 import Details from './Details';
@@ -44,7 +44,13 @@ function Tabs({ product }) {
 }
 
 Tabs.propTypes = {
-  product: shape({}).isRequired,
+  product: shape({
+    id: string,
+    name: string,
+    image: string,
+    price: number,
+    quantity: number,
+  }).isRequired,
 };
 
 export default Tabs;

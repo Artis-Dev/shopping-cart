@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRemove } from '@fortawesome/free-solid-svg-icons';
-import { shape } from 'prop-types';
+import { number, shape, string } from 'prop-types';
 import useCartActions from '../../../utils/cartActions';
 
 function CartListItemRemove({ product }) {
@@ -18,7 +18,13 @@ function CartListItemRemove({ product }) {
 }
 
 CartListItemRemove.propTypes = {
-  product: shape({}).isRequired,
+  product: shape({
+    id: string,
+    name: string,
+    image: string,
+    price: number,
+    quantity: number,
+  }).isRequired,
 };
 
 export default CartListItemRemove;

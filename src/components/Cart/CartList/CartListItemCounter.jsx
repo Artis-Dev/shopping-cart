@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
-import { shape } from 'prop-types';
+import { number, shape, string } from 'prop-types';
 import useCartActions from '../../../utils/cartActions';
 
 function CartListItemCounter({ product }) {
@@ -41,7 +41,13 @@ function CartListItemCounter({ product }) {
 }
 
 CartListItemCounter.propTypes = {
-  product: shape({}).isRequired,
+  product: shape({
+    id: string,
+    name: string,
+    image: string,
+    price: number,
+    quantity: number,
+  }).isRequired,
 };
 
 export default CartListItemCounter;

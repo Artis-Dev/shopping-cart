@@ -1,4 +1,4 @@
-import { shape } from 'prop-types';
+import { number, shape, string } from 'prop-types';
 
 function Details({ product }) {
   return (
@@ -22,7 +22,13 @@ function Details({ product }) {
 }
 
 Details.propTypes = {
-  product: shape({}).isRequired,
+  product: shape({
+    id: string,
+    name: string,
+    image: string,
+    price: number,
+    quantity: number,
+  }).isRequired,
 };
 
 export default Details;
