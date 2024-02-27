@@ -2,9 +2,11 @@ import { useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header/Header';
+import useScrollToTop from '../utils/useScrollToTop';
 
 function Layout() {
   const { showNav } = useSelector((state) => state.ui);
+  useScrollToTop();
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
