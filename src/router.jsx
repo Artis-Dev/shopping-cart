@@ -6,6 +6,7 @@ import Product from './pages/Product';
 import Cart from './pages/Cart';
 import Contacts from './pages/Contacts';
 import PageNotFound from './pages/PageNotFound';
+import ThankYou from './pages/ThankYou';
 
 const router = createBrowserRouter(
   [
@@ -35,6 +36,11 @@ const router = createBrowserRouter(
         {
           path: 'cart',
           element: <Cart />,
+          exact: true,
+        },
+        {
+          path: 'thank-you',
+          element: <ThankYou />,
           exact: true,
         },
         {

@@ -1,7 +1,10 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const useCartActions = () => {
   const dispatch = useDispatch();
+  const { selected } = useSelector((state) => state.shipping);
+  const navigate = useNavigate();
 
   const handleAddToCart = (item, event) => {
     event.preventDefault();
@@ -30,6 +33,17 @@ const useCartActions = () => {
     dispatch({ type: 'SHIPPING_UNCHECK_METHOD' });
   };
 
+  const handleBuy = (item) => {
+    if (selected) {
+      handleUncheckShippingMethod();
+      dispatch({ type: 'CART_BUY', item });
+      navigate('/thank-you');
+    } else {
+      dispatch({ type: 'UI_SHOW_NOTICE' });
+      window.scrollTo(0, 0);
+    }
+  };
+
   return {
     handleAddToCart,
     handleRemove,
@@ -37,6 +51,7 @@ const useCartActions = () => {
     handleDecrement,
     handleShippingMethod,
     handleUncheckShippingMethod,
+    handleBuy,
   };
 };
 

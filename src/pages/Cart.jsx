@@ -3,9 +3,12 @@ import EmptyCart from '../components/Cart/EmptyCart';
 import CartList from '../components/Cart/CartList/CartList';
 import CartShipping from '../components/Cart/CartShipping';
 import CartSummary from '../components/Cart/CartSummary';
+import BuyButton from '../components/Cart/BuyButton';
 
 function Cart() {
   const cart = useSelector((state) => state.cart);
+  const { selected } = useSelector((state) => state.shipping);
+  const { showNotice } = useSelector((state) => state.ui);
 
   return (
     <div className="m-auto flex max-w-screen-xl flex-col gap-6 p-6 sm:p-12">
@@ -15,6 +18,12 @@ function Cart() {
         </div>
       ) : (
         <>
+          {!selected && showNotice ? (
+            <div className="w-full rounded-lg bg-red-100 p-6 text-red-900">
+              <span className="font-semibold">ERROR:</span> Select shipping
+              method!
+            </div>
+          ) : null}
           <div className="w-full rounded-lg bg-gray-100 p-6">
             <CartList />
           </div>
@@ -26,6 +35,7 @@ function Cart() {
               <CartSummary />
             </div>
           </div>
+          <BuyButton cart={cart} />
         </>
       )}
     </div>

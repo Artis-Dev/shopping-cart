@@ -6,9 +6,11 @@ const PAGE_SIZE_INITIAL_VALUE = 6;
 const initialState = {
   products,
   cart: [],
+  order: false,
   ui: {
     showNav: false,
     showFilter: false,
+    showNotice: false,
   },
   filter: {
     categories: ['movies', 'television', 'games'],
@@ -21,9 +23,9 @@ const initialState = {
     pageSize: PAGE_SIZE_INITIAL_VALUE,
   },
   shipping: {
-    selected: {},
+    selected: false,
     shippingMethods: [
-      { id: 'free', title: 'Free shipping', price: 0.0 },
+      { id: 'free', title: 'Free shipping (parcel)', price: 0.0 },
       { id: 'local', title: 'Local pickup', price: 0.0 },
       { id: 'parcel', title: 'Parcel', price: 3.5 },
       { id: 'courier', title: 'Courier', price: 5.0 },
@@ -92,6 +94,26 @@ const reducer = (state = initialState, action = {}) => {
             return item;
           })
           .filter((item) => item),
+      };
+
+    case 'CART_BUY':
+      return {
+        ...state,
+        cart: [],
+        order: action.item,
+        ui: {
+          ...state.ui,
+          showNotice: false,
+        },
+      };
+
+    case 'UI_SHOW_NOTICE':
+      return {
+        ...state,
+        ui: {
+          ...state.ui,
+          showNotice: true,
+        },
       };
 
     case 'UI_TOGGLE_NAV':
@@ -264,7 +286,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         shipping: {
           ...state.shipping,
-          selected: {},
+          selected: false,
         },
       };
 
